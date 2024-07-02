@@ -6,3 +6,9 @@
 This code repository (or "repo") is designed to demonstrate the best GitHub has to offer with the least amount of noise.
 
 The repo includes an `index.html` file (so it can render a web page), two GitHub Actions workflows, and a CSS stylesheet dependency.
+
+Ong Tee Yong Daniel CT0268374
+Chin Foong Kai CT0378168
+Htoo Aung Nyan CT0378329
+Min Han Bryan Lee CT0369682
+Htet Ko Linn CT0378402
