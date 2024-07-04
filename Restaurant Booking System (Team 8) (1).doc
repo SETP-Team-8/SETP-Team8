@@ -1,0 +1,945 @@
+Date: Thu, 4 Jul 2024 13:09:55 +0000 (UTC)
+Message-ID: <191632362.37.1720098595475@e63403e7457e>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_36_1865201780.1720098595475"
+
+------=_Part_36_1865201780.1720098595475
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>Restaurant Booking System (Team 8)</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>Restaurant Booking System (Team 8)</h1>
+    <div class=3D"Section1">
+        <div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"fe=
+eb2ccc-7fcd-4e3c-b401-21f97de882bf" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 167.0px;">
+<col style=3D"width: 513.0px;">
+</colgroup>
+<tbody>
+<tr>
+<th data-highlight-colour=3D"var(--ds-background-accent-gray-subtlest,#f4f5=
+f7)" class=3D"confluenceTh">
+<p><strong>Target Release</strong></p></th>
+<td class=3D"confluenceTd">
+<p>End of July</p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTd">
+<p><strong>Document Status</strong></p></td>
+<td class=3D"confluenceTd">
+<p>DRAFT</p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTd">
+<p><strong>Last Edited</strong></p></td>
+<td class=3D"confluenceTd">
+<p>&nbsp;<time datetime=3D"2024-07-02" class=3D"date-past">02 Jul 2024</tim=
+e></p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTd">
+<p><strong>Document Owner</strong></p></td>
+<td class=3D"confluenceTd">
+<p><a class=3D"confluence-userlink user-mention" data-account-id=3D"712020:=
+77e23255-839b-46ba-9887-917a91589748" href=3D"https://team8assignment.atlas=
+sian.net/wiki/people/712020:77e23255-839b-46ba-9887-917a91589748?ref=3Dconf=
+luence" target=3D"_blank" data-linked-resource-id=3D"294924" data-linked-re=
+source-version=3D"1" data-linked-resource-type=3D"userinfo" data-base-url=
+=3D"https://team8assignment.atlassian.net/wiki">bryan lee</a> <a class=3D"c=
+onfluence-userlink user-mention" data-account-id=3D"712020:75f844fa-b3fe-4d=
+6d-bddf-e9df1fff895f" href=3D"https://team8assignment.atlassian.net/wiki/pe=
+ople/712020:75f844fa-b3fe-4d6d-bddf-e9df1fff895f?ref=3Dconfluence" target=
+=3D"_blank" data-linked-resource-id=3D"393260" data-linked-resource-version=
+=3D"1" data-linked-resource-type=3D"userinfo" data-base-url=3D"https://team=
+8assignment.atlassian.net/wiki">htooaung</a> <a class=3D"confluence-userlin=
+k user-mention" data-account-id=3D"712020:2f39d834-0689-4585-a545-ebd4dab9f=
+50a" href=3D"https://team8assignment.atlassian.net/wiki/people/712020:2f39d=
+834-0689-4585-a545-ebd4dab9f50a?ref=3Dconfluence" target=3D"_blank" data-li=
+nked-resource-id=3D"393239" data-linked-resource-version=3D"1" data-linked-=
+resource-type=3D"userinfo" data-base-url=3D"https://team8assignment.atlassi=
+an.net/wiki">Daniel Ong</a> <a class=3D"confluence-userlink user-mention" d=
+ata-account-id=3D"712020:9b93dc6b-e5bc-4ca3-88ec-c2881d95653e" href=3D"http=
+s://team8assignment.atlassian.net/wiki/people/712020:9b93dc6b-e5bc-4ca3-88e=
+c-c2881d95653e?ref=3Dconfluence" target=3D"_blank" data-linked-resource-id=
+=3D"393250" data-linked-resource-version=3D"1" data-linked-resource-type=3D=
+"userinfo" data-base-url=3D"https://team8assignment.atlassian.net/wiki">Chi=
+n Foong Kai</a> <a class=3D"confluence-userlink user-mention current-user-m=
+ention" data-account-id=3D"70121:0d1ecd8e-e5b7-4884-8d75-716439fef2b4" href=
+=3D"https://team8assignment.atlassian.net/wiki/people/70121:0d1ecd8e-e5b7-4=
+884-8d75-716439fef2b4?ref=3Dconfluence" target=3D"_blank" data-linked-resou=
+rce-id=3D"131073" data-linked-resource-version=3D"1" data-linked-resource-t=
+ype=3D"userinfo" data-base-url=3D"https://team8assignment.atlassian.net/wik=
+i">Htet Ko Linn</a></p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTd">
+<p><strong>Development Team</strong></p></td>
+<td class=3D"confluenceTd">
+<p><a class=3D"confluence-userlink user-mention" data-account-id=3D"712020:=
+77e23255-839b-46ba-9887-917a91589748" href=3D"https://team8assignment.atlas=
+sian.net/wiki/people/712020:77e23255-839b-46ba-9887-917a91589748?ref=3Dconf=
+luence" target=3D"_blank" data-linked-resource-id=3D"294924" data-linked-re=
+source-version=3D"1" data-linked-resource-type=3D"userinfo" data-base-url=
+=3D"https://team8assignment.atlassian.net/wiki">bryan lee</a> <a class=3D"c=
+onfluence-userlink user-mention" data-account-id=3D"712020:75f844fa-b3fe-4d=
+6d-bddf-e9df1fff895f" href=3D"https://team8assignment.atlassian.net/wiki/pe=
+ople/712020:75f844fa-b3fe-4d6d-bddf-e9df1fff895f?ref=3Dconfluence" target=
+=3D"_blank" data-linked-resource-id=3D"393260" data-linked-resource-version=
+=3D"1" data-linked-resource-type=3D"userinfo" data-base-url=3D"https://team=
+8assignment.atlassian.net/wiki">htooaung</a> <a class=3D"confluence-userlin=
+k user-mention" data-account-id=3D"712020:9b93dc6b-e5bc-4ca3-88ec-c2881d956=
+53e" href=3D"https://team8assignment.atlassian.net/wiki/people/712020:9b93d=
+c6b-e5bc-4ca3-88ec-c2881d95653e?ref=3Dconfluence" target=3D"_blank" data-li=
+nked-resource-id=3D"393250" data-linked-resource-version=3D"1" data-linked-=
+resource-type=3D"userinfo" data-base-url=3D"https://team8assignment.atlassi=
+an.net/wiki">Chin Foong Kai</a> <a class=3D"confluence-userlink user-mentio=
+n" data-account-id=3D"712020:2f39d834-0689-4585-a545-ebd4dab9f50a" href=3D"=
+https://team8assignment.atlassian.net/wiki/people/712020:2f39d834-0689-4585=
+-a545-ebd4dab9f50a?ref=3Dconfluence" target=3D"_blank" data-linked-resource=
+-id=3D"393239" data-linked-resource-version=3D"1" data-linked-resource-type=
+=3D"userinfo" data-base-url=3D"https://team8assignment.atlassian.net/wiki">=
+Daniel Ong</a> <a class=3D"confluence-userlink user-mention current-user-me=
+ntion" data-account-id=3D"70121:0d1ecd8e-e5b7-4884-8d75-716439fef2b4" href=
+=3D"https://team8assignment.atlassian.net/wiki/people/70121:0d1ecd8e-e5b7-4=
+884-8d75-716439fef2b4?ref=3Dconfluence" target=3D"_blank" data-linked-resou=
+rce-id=3D"131073" data-linked-resource-version=3D"1" data-linked-resource-t=
+ype=3D"userinfo" data-base-url=3D"https://team8assignment.atlassian.net/wik=
+i">Htet Ko Linn</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"20=
+406f8e-8f06-4199-9cc3-962674aed43f" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 96.0px;">
+<col style=3D"width: 282.0px;">
+<col style=3D"width: 189.0px;">
+<col style=3D"width: 189.0px;">
+</colgroup>
+<tbody>
+<tr>
+<th data-highlight-colour=3D"var(--ds-background-accent-gray-subtlest,#f4f5=
+f7)" class=3D"confluenceTh">
+<p><strong>Version</strong></p></th>
+<th data-highlight-colour=3D"var(--ds-background-accent-gray-subtlest,#f4f5=
+f7)" class=3D"confluenceTh">
+<p><strong>Change Notes</strong></p></th>
+<th data-highlight-colour=3D"var(--ds-background-accent-gray-subtlest,#f4f5=
+f7)" class=3D"confluenceTh">
+<p><strong>Edited By</strong></p></th>
+<th data-highlight-colour=3D"var(--ds-background-accent-gray-subtlest,#f4f5=
+f7)" class=3D"confluenceTh">
+<p><strong>Date</strong></p></th>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>1.0</p></td>
+<td class=3D"confluenceTd">
+<p>Requirements gathering</p></td>
+<td class=3D"confluenceTd">
+<p>&nbsp;Team 8</p></td>
+<td class=3D"confluenceTd">
+<p>&nbsp;Jul 2, 2024</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id=3D"RestaurantBookingSystem(Team8)-Introduction"><u>Introduction</u><=
+/h2>
+<p>The Restaurant Booking System (RBS) enhances dining experiences by provi=
+ding a seamless online and phone-based reservation solution for diners and =
+restaurant managers. It offers intuitive interfaces for easy booking, modif=
+ications, and management of reservations, ensuring operational efficiency a=
+nd customer satisfaction in a scalable and secure environment.</p>
+<p></p>
+<h2 id=3D"RestaurantBookingSystem(Team8)-ProblemStatement"><u>Problem State=
+ment</u></h2>
+<p>Restaurants often struggle with managing reservations efficiently, leadi=
+ng to customer dissatisfaction and loss of revenue due to overbooking or un=
+derutilization of space. Our Restaurant Booking System (RBS) aims to solve =
+these issues by offering a web-based application for diners and a managemen=
+t interface for restaurant staff, enabling real-time booking, updates, and =
+cancellations. Targeting restaurant managers and diners, RBS will streamlin=
+e the reservation process, improve operational efficiency, and enhance the =
+dining experience.</p>
+<h2 id=3D"RestaurantBookingSystem(Team8)-Objectives"><u>Objectives</u></h2>
+<p>The objective of the Restaurant Booking System is to streamline the rese=
+rvation process for both diners and restaurant staff, enhancing operational=
+ efficiency and customer satisfaction through an intuitive, real-time booki=
+ng interface.</p>
+<h2 id=3D"RestaurantBookingSystem(Team8)-Scope"><u>Scope</u></h2>
+<p>The scope of this project includes the development and integration of th=
+e following features and is separated into 2 phases.</p>
+<p></p>
+<p><strong>Phase 1: Basic Functionality </strong></p>
+<p><strong>Diners:</strong></p>
+<ul>
+<li>
+<p><strong>Search for Restaurants</strong>: Enable diners to search for res=
+taurants by name.</p></li>
+<li>
+<p><strong>View Restaurant Details</strong>: Allow diners to see basic deta=
+ils like restaurant hours, menu, and available time slots.</p></li>
+<li>
+<p><strong>Make Reservation</strong>: Diners can book a table for a specifi=
+c date &amp; time, and number of guests, with the reservation immediately c=
+onfirmed via a simple confirmation page.</p></li>
+</ul>
+<p></p>
+<p><strong>Restaurant Staff:</strong></p>
+<ul>
+<li>
+<p><strong>Reservation Dashboard</strong>: A simple interface that shows al=
+l current and upcoming reservations.</p></li>
+<li>
+<p><strong>Manual Reservation Entry</strong>: Staff can enter reservations =
+made via phone or in-person directly into the system.</p></li>
+<li>
+<p><strong>Basic Reporting</strong>: Generate simple reports that show the =
+number of reservations per day.</p></li>
+<li>
+<p><strong>Admin View</strong>: Restaurant account creation, activation, de=
+activation, and amending the existing reservation.</p></li>
+</ul>
+<p></p>
+<p><strong>Phase 2: Additional Functionality</strong></p>
+<p><strong>Diners:</strong></p>
+<ul>
+<li>
+<p><strong>Interactive Calendar</strong>: Diners can use an interactive cal=
+endar to see available slots and book more easily.</p></li>
+<li>
+<p><strong>Modification and Cancellation</strong>: Enable diners to modify =
+or cancel their reservations online.</p></li>
+<li>
+<p><strong>Reviews and Ratings</strong>: After dining, users can rate their=
+ experience and leave feedback directly through the system.</p></li>
+<li>
+<p><strong>Reminder</strong>: send the reminder to the user 1 day before.</=
+p></li>
+</ul>
+<p></p>
+<p><strong>Restaurant Staff:</strong></p>
+<ul>
+<li>
+<p><strong>Table Management</strong>: Tools to manage table layouts and vis=
+ualize how reservations fill the restaurant space.</p></li>
+<li>
+<p><strong>Customer Management</strong>: Track customer preferences and vis=
+it history for tailored services.</p></li>
+<li>
+<p><strong>Enhanced Notifications and Alerts</strong>: Automated alerts for=
+ booking changes, cancellations, and reminders for upcoming reservations.</=
+p></li>
+<li>
+<p><strong>Advanced Reporting and Analytics</strong>: Detailed analytics on=
+ booking patterns, and customer demographics.</p></li>
+</ul>
+<p></p>
+<h3 id=3D"RestaurantBookingSystem(Team8)-FunctionalRequirementsPhase1"><u>F=
+unctional Requirements Phase 1</u></h3>
+<p></p>
+<p><strong>Diners</strong></p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"center" data-local-id=3D"2b1=
+20d0c-7bfc-4df8-80ee-65ddd1099369" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 165.0px;">
+<col style=3D"width: 198.0px;">
+<col style=3D"width: 395.0px;">
+</colgroup>
+<tbody>
+<tr>
+<th class=3D"confluenceTh">
+<p><strong>Items</strong></p></th>
+<th class=3D"confluenceTh">
+<p><strong>Interface</strong></p></th>
+<th class=3D"confluenceTh">
+<p><strong>Descriptions </strong></p></th>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Search for Restaurant</p></td>
+<td class=3D"confluenceTd">
+<p>Search by the restaurant name</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Functionality</strong>: Users can search for restaurants by name=
+ or location using a simple search bar.</p></li>
+<li>
+<p><strong>Validation</strong>: Real-time checks to ensure search inputs ar=
+e valid (e.g., non-empty, correct character types).</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>View Restaurant Details</p></td>
+<td class=3D"confluenceTd">
+<p>Restaurant detail page</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Functionality</strong>: Displays basic details such as restauran=
+t hours, menu, and available time slots.</p></li>
+<li>
+<p><strong>Data Display</strong>: Information is directly fetched and displ=
+ayed from the restaurant=E2=80=99s database entry.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td rowspan=3D"2" class=3D"confluenceTd">
+<p>Reservation</p></td>
+<td class=3D"confluenceTd">
+<p>Restaurant detail page</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Functionality</strong>: Users can book a table by selecting the =
+date, time, and number of guests.</p></li>
+<li>
+<p><strong>Confirmation</strong>: Immediate on-screen confirmation message =
+after booking, with minimal details like time, date, and booking ID.</p></l=
+i>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Reservation detail page</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p>Display the booking detail information such as restaurant name, date &am=
+p; time, number of people (adult &amp; child),</p></li>
+<li>
+<p>Ask the customer to input required info such as first name &amp; last na=
+me, phone number, email address, and customer message for any special reque=
+st.</p></li>
+<li>
+<p>Check T&amp;C and redirect to the Confirmation page, check and confirm t=
+he booking.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Confirmation SMS</p></td>
+<td class=3D"confluenceTd">
+<p>SMS</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p>Reservatoin confirmation message</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p></p>
+<p><strong>Restaurant Staff</strong></p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"center" data-local-id=3D"802=
+7f7d9-7b36-4923-a32d-76013c2b6672" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 165.0px;">
+<col style=3D"width: 198.0px;">
+<col style=3D"width: 395.0px;">
+</colgroup>
+<tbody>
+<tr>
+<th class=3D"confluenceTh">
+<p><strong>Items</strong></p></th>
+<th class=3D"confluenceTh">
+<p><strong>Interface</strong></p></th>
+<th class=3D"confluenceTh">
+<p><strong>Descriptions </strong></p></th>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Reservation</p></td>
+<td class=3D"confluenceTd">
+<p>Dashboard</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Functionality</strong>: Shows a list of all current and upcoming=
+ reservations.</p></li>
+<li>
+<p><strong>Data Handling</strong>: Ability to refresh in real-time to show =
+new or modified bookings.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Manual Reservation</p></td>
+<td class=3D"confluenceTd">
+<p>Dashboard</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Functionality</strong>: Staff can manually input reservations ma=
+de via phone or in-person.</p></li>
+<li>
+<p><strong>Validation</strong>: Checks for conflicting reservations before =
+confirming.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Reporting</p></td>
+<td class=3D"confluenceTd">
+<p>Report</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Functionality: </strong>Generate simple reports on daily booking=
+s and availability.</p></li>
+<li>
+<p><strong>Validation: ?</strong></p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>User Account Creation</p></td>
+<td class=3D"confluenceTd">
+<p>User Management</p></td>
+<td class=3D"confluenceTd">
+<p>Restaurant manager role</p>
+<p>Restaurant staff role</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id=3D"RestaurantBookingSystem(Team8)-Non-FunctionalRequirementsPhase1">=
+<u>Non-Functional Requirements Phase 1</u></h3>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"center" data-local-id=3D"480=
+5dd60-2d27-4d56-9937-3924d1f889e0" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 224.0px;">
+<col style=3D"width: 536.0px;">
+</colgroup>
+<tbody>
+<tr>
+<th class=3D"confluenceTh">
+<p><strong>Items</strong></p></th>
+<th class=3D"confluenceTh">
+<p><strong>Descriptions </strong></p></th>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Performance</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Response Time</strong>: The system should load any page within 2=
+ seconds under normal operation conditions.</p></li>
+<li>
+<p><strong>Capacity</strong>: Handle up to 100 concurrent users without per=
+formance degradation.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Usability</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>User Interface</strong>: The interface must be intuitive and eas=
+y to navigate for users with minimal training.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Reliability</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Availability</strong>: The system should be available 99% of the=
+ time, excluding planned maintenance.</p></li>
+<li>
+<p><strong>Recovery</strong>: In case of failure, the system should be able=
+ to recover and restart within 2 minutes.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Security</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Data Protection</strong>: Ensure all personal and payment inform=
+ation is encrypted.</p></li>
+<li>
+<p><strong>Access Control</strong>: Implement role-based access control to =
+ensure users can only access functionalities pertinent to their role.</p></=
+li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Scalability</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p>The system should be designed to easily scale up to handle an increased =
+load of up to 500 concurrent users by adding additional resources without m=
+ajor changes to the architecture.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p></p>
+<h3 id=3D"RestaurantBookingSystem(Team8)-AdditionalFunctionalRequirementsPh=
+ase2"><u>Additional Functional Requirements Phase 2</u></h3>
+<p></p>
+<p><strong>Diners</strong></p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"center" data-local-id=3D"9bf=
+101df-d6bd-4784-9265-4ac4563b1141" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 165.0px;">
+<col style=3D"width: 198.0px;">
+<col style=3D"width: 395.0px;">
+</colgroup>
+<tbody>
+<tr>
+<th class=3D"confluenceTh">
+<p><strong>Items</strong></p></th>
+<th class=3D"confluenceTh">
+<p><strong>Interface</strong></p></th>
+<th class=3D"confluenceTh">
+<p><strong>Descriptions </strong></p></th>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Interactive Calendar</p></td>
+<td class=3D"confluenceTd">
+<p>Restaurant detail page</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Functionality</strong>: A dynamic calendar for easier date selec=
+tion, showing real-time availability.</p></li>
+<li>
+<p><strong>Data Interaction</strong>: Calendar updates based on the selecte=
+d month to show available and unavailable days.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Modification and Cancellation</p></td>
+<td class=3D"confluenceTd">
+<p>My Reservation</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Functionality</strong>: Allow users to modify or cancel their re=
+servations through their user account.</p></li>
+<li>
+<p><strong>Validation &amp; Confirmation</strong>: Real-time validation of =
+changes and instant confirmation messages.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Reviews and Ratings</p></td>
+<td class=3D"confluenceTd">
+<p>Restaurant detail page</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Functionality</strong>: Users can rate their dining experience a=
+nd leave feedback for each reservation they have completed.</p></li>
+<li>
+<p><strong>Data Handling</strong>: Reviews are stored and linked to the spe=
+cific restaurant within the database.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Restaurant Staff</strong></p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"center" data-local-id=3D"02a=
+86e12-c2ac-426e-9b4a-18908f3e6096" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 165.0px;">
+<col style=3D"width: 198.0px;">
+<col style=3D"width: 395.0px;">
+</colgroup>
+<tbody>
+<tr>
+<th class=3D"confluenceTh">
+<p><strong>Items</strong></p></th>
+<th class=3D"confluenceTh">
+<p><strong>Interface</strong></p></th>
+<th class=3D"confluenceTh">
+<p><strong>Descriptions </strong></p></th>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Table Management</p></td>
+<td class=3D"confluenceTd">
+<p>Dashboard</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Functionality</strong>: Visual tool for managing table layouts a=
+nd reservation placements.</p></li>
+<li>
+<p><strong>Data Interaction</strong>: Dynamic updating of table availabilit=
+y based on current reservations.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Advance Customer Management</p></td>
+<td class=3D"confluenceTd">
+<p>Customer Management</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Functionality</strong>: Track customer preferences and history f=
+or offering personalized services.</p></li>
+<li>
+<p><strong>Data Utilization</strong>: Use of historical data to send target=
+ed promotions or suggest preferred booking times.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Noti and Alert Enhancement</p></td>
+<td class=3D"confluenceTd">
+<p></p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Functionality</strong>: Automated alerts for reservation changes=
+, upcoming bookings, and operational notifications.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Reporting and Analytics</p></td>
+<td class=3D"confluenceTd">
+<p>Report</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Functionality</strong>: Detailed reports on customer behavior, p=
+eak times, and revenue statistics.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p></p>
+<h3 id=3D"RestaurantBookingSystem(Team8)-Non-FunctionalRequirementsPhase2">=
+<u>Non-Functional Requirements Phase 2</u></h3>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"center" data-local-id=3D"8d6=
+8f653-cee1-4679-b02a-051e50328329" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 224.0px;">
+<col style=3D"width: 536.0px;">
+</colgroup>
+<tbody>
+<tr>
+<th class=3D"confluenceTh">
+<p><strong>Items</strong></p></th>
+<th class=3D"confluenceTh">
+<p><strong>Descriptions </strong></p></th>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Performance</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Efficiency</strong>: Improved caching mechanisms to reduce load =
+times and database queries for frequent operations.</p></li>
+<li>
+<p><strong>Load Balancing</strong>: Implement load balancing to distribute =
+user load evenly across servers.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Usability</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Localization</strong>: Support multiple languages to cater to a =
+diverse user base, enhancing the system=E2=80=99s usability in non-English =
+speaking regions.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Reliability</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Data Backup</strong>: Automated daily backups and a clear, teste=
+d backup restoration procedure.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Security</p></td>
+<td class=3D"confluenceTd">
+<ul>
+<li>
+<p><strong>Regular Audits</strong>: Conduct security audits bi-annually to =
+identify and rectify vulnerabilities.</p></li>
+<li>
+<p><strong>Advanced Authentication</strong>: Implement multi-factor authent=
+ication for accessing sensitive areas of the system.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id=3D"RestaurantBookingSystem(Team8)-UserActivityDiagram"><u>User Activ=
+ity Diagram</u></h2><a class=3D"external-link" data-card-appearance=3D"bloc=
+k" href=3D"https://lucid.app/documents/embedded/67c364a2-e3f9-4c75-9d5a-37b=
+ef9b744cf?invitationId=3Dinv_360925f3-e9ce-442c-83c0-b76fa042254b#" rel=3D"=
+nofollow">https://lucid.app/documents/embedded/67c364a2-e3f9-4c75-9d5a-37be=
+f9b744cf?invitationId=3Dinv_360925f3-e9ce-442c-83c0-b76fa042254b#</a>
+<p></p>
+<h2 id=3D"RestaurantBookingSystem(Team8)-UI/UXMockup?"><u>UI/UX Mockup?</u>=
+</h2>
+<p></p>
+<h2 id=3D"RestaurantBookingSystem(Team8)-DatabaseERD?"><u>Database ERD?</u>=
+</h2>
+    </div>
+</body>
+</html>
+------=_Part_36_1865201780.1720098595475--
