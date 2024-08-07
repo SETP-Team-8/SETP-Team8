@@ -5,24 +5,18 @@ var router = express.Router();
 
 // POST Endpoint for Creating Reservations
 router.post('/', async function(req, res) {
-    // Extract reservation details from request body
     const { ReservationDate, ReservationTime, NumberOfGuests, NumberOfChildren, SpecialRequests, DinerID, RestaurantID, TableID } = req.body;
-  
-    // SQL query to insert reservation data into the database
     const query = `
-    INSERT INTO Reservations (reservationDate, reservationTime, numberOfGuests, numberOfChildren, specialRequests, DinerID, RestaurantID, TableID)
+    INSERT INTO Reservations (ReservationDate, ReservationTime, NumberOfGuests, NumberOfChildren, SpecialRequests, DinerID, RestaurantID, TableID)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `;
-
-    // Values to insert, extracted from the request body
-    const values = [ReservationDate, ReservationTime, NumberOfGuests, NumberOfChildren, SpecialRequests, DinerID, RestaurantID, TableID];  
+    const values = [ReservationDate, ReservationTime, NumberOfGuests, NumberOfChildren, SpecialRequests, DinerID, RestaurantID, TableID];
     try {
-      // Execute the query
-      const [result] = await pool.query(query, values);
+        const [result] = await pool.query(query, values);
         res.status(201).send({ message: 'Reservation created', reservationId: result.insertId });
     } catch (err) {
         console.error(err);
-        res.status(500).send('Server error: ' + err.message); // Include error message in response
+        res.status(500).send('Server error: ' + err.message);
     }
 });
 
