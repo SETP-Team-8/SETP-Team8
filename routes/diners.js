@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../config/database'); // Database config 
-const { body, validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs'); // hashing
+const jwt = require('jsonwebtoken'); // authentication
+const { body, validationResult } = require('express-validator'); // validation
+const { authenticateToken } = require('../routes/authentication');
 
 // POST: Register a new diner
 router.post('/register', [
@@ -27,9 +30,10 @@ router.post('/register', [
 
   const { Title, FirstName, LastName, Username, Email, Password, PhoneNumber, DateOfBirth } = req.body;
   try {
-      const query = `INSERT INTO Diner (Title, FirstName, LastName, Username, Email, Password, PhoneNumber, DateOfBirth) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
-      const values = [Title, FirstName, LastName, Username, Email, Password, PhoneNumber, DateOfBirth];
-      const [result] = await pool.query(query, values);
+      const hashedPassword = bcrypt.hashSync(Password, 10); // Hash password
+      const query = `INSERT INTO Diner (Title, FirstName, LastName, Username, Email, Password, PhoneNumber, DateOfBirth) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`; //SQL query
+      const values = [Title, FirstName, LastName, Username, Email, hashedPassword, PhoneNumber, DateOfBirth]; // Use hashedPassword
+      const [result] = await pool.query(query, values); //Execute query 
       res.status(201).send({ message: 'Diner registered successfully', dinerId: result.insertId });
   } catch (err) {
       console.error(err);
@@ -39,34 +43,53 @@ router.post('/register', [
 
 // POST: Diner login
 router.post('/login', async (req, res) => {
-    const { Email, Password } = req.body;
-    try {
-        const query = `SELECT * FROM Diner WHERE Email = ? AND Password = ?`;
-        const [rows] = await pool.query(query, [Email, Password]);
-        if (rows.length > 0) {
-            res.status(200).send({ message: 'Login successful', diner: rows[0] });
-        } else {
-            res.status(404).send('Diner not found or password incorrect');
-        }
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Server error: ' + err.message);
-    }
+  const { identifier, Password } = req.body; // 'identifier' can be either email or username
+
+  try {
+      // Check both username and email fields for the identifier
+      const query = `SELECT * FROM Diner WHERE Username = ? OR Email = ? LIMIT 1`;
+      const [rows] = await pool.query(query, [identifier, identifier]);
+
+      // Log fetched data for debugging
+      console.log("Fetched user:", rows[0]);
+
+      if (rows.length > 0) {
+          const user = rows[0];
+
+          // Check and log the password details
+          console.log("Stored password:", user.Password);
+          console.log("Provided password:", Password);
+
+          // Check if the password is defined and compare it
+          if (user.Password && bcrypt.compareSync(Password, user.Password)) {
+              const token = jwt.sign({ dinerId: user.DinerID }, process.env.TOKEN_SECRET, { expiresIn: '1h' });
+              res.json({ message: 'Login successful', token });
+          } else {
+              res.status(401).send('Password incorrect');
+          }
+      } else {
+          res.status(404).send('Diner not found');
+      }
+  } catch (err) {
+      console.error('Error during login:', err);
+      res.status(500).send('Server error: ' + err.message);
+  }
 });
 
 // PUT: Update diner details
 router.put('/:dinerId', async (req, res) => {
-    const { Title, FirstName, LastName, Email, Username, Password, PhoneNumber, DirthOfBirth } = req.body;
-    const dinerId = req.params.dinerId;
-    try {
-        const query = `UPDATE Diner SET Title = ?, FirstName = ?, LastName = ?, Email = ?, Username = ?, Password = ?, PhoneNumber = ?, DateOfBirth = ? WHERE DinerID = ?`;
-        const values = [Title, FirstName, LastName, Email, Username, Password, PhoneNumber, DateOfBirth, dinerId];
-        await pool.query(query, values);
-        res.send({ message: 'Diner updated successfully' });
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Server error: ' + err.message);
-    }
+  const { Title, FirstName, LastName, Email, Username, Password, PhoneNumber, DateOfBirth } = req.body;
+  const dinerId = req.params.dinerId;
+  try {
+      const hashedPassword = bcrypt.hashSync(Password, 10); // Hash the password
+      const query = `UPDATE Diner SET Title = ?, FirstName = ?, LastName = ?, Email = ?, Username = ?, Password = ?, PhoneNumber = ?, DateOfBirth = ? WHERE DinerID = ?`;
+      const values = [Title, FirstName, LastName, Email, Username, hashedPassword, PhoneNumber, DateOfBirth, dinerId]; // Use hashedPassword instead of Password
+      await pool.query(query, values);
+      res.send({ message: 'Diner updated successfully' });
+  } catch (err) {
+      console.error(err);
+      res.status(500).send('Server error: ' + err.message);
+  }
 });
 
 // DELETE: Delete diner account
@@ -95,20 +118,20 @@ router.get('/', async (req, res) => {
 });
 
 // GET: Retrieve diner details
-router.get('/:dinerId', async (req, res) => {
-    const dinerId = req.params.dinerId;
-    try {
-        const query = 'SELECT * FROM Diner WHERE DinerID = ?';
-        const [rows] = await pool.query(query, [dinerId]);
-        if (rows.length > 0) {
-            res.json(rows[0]);
-        } else {
-            res.status(404).send('Diner not found');
-        }
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Server error');
-    }
+router.get('/:dinerId', authenticateToken, async (req, res) => {
+  const dinerId = req.params.dinerId;
+  try {
+      const query = 'SELECT * FROM Diner WHERE DinerID = ?';
+      const [rows] = await pool.query(query, [dinerId]);
+      if (rows.length > 0) {
+          res.json(rows[0]);
+      } else {
+          res.status(404).send('Diner not found');
+      }
+  } catch (err) {
+      console.error(err);
+      res.status(500).send('Server error');
+  }
 });
 
 module.exports = router;
