@@ -44,6 +44,15 @@ body {
     border-radius: 5px;
 }
 
+.navbtm span#welcomeMessage {
+    color: #FF5733; /* Adjust the color to make it more visible */
+    font-weight: bold; /* Make the text bold */
+    padding: 5px 10px; /* Ensure padding is consistent with other elements */
+    background-color: #F0F0F0; /* Optional: add a background color if it fits the design */
+    border-radius: 5px; /* Optional: add border-radius if it fits the design */
+    margin: 0 10px; /* Ensure there is some margin */
+}
+
 .navbtm a:hover {
     background-color: #F0F0F0;
     color: #FF5733;

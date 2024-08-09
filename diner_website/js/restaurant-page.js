@@ -18,7 +18,7 @@ subImages.forEach((subImage) => {
     });
 });
 
-// preload images for smoother transitions
+// Preload images for smoother transitions
 function preloadImages() {
     subImages.forEach(image => {
         const img = new Image();
@@ -26,4 +26,46 @@ function preloadImages() {
     });
 }
 
-window.onload = preloadImages;
+window.onload = function() {
+    preloadImages();
+    updateNav();  // Update navigation based on user status
+};
+
+// Function to update the navigation bar
+function updateNav() {
+    const navUser = document.getElementById('navUser');
+    const navGuest = document.querySelector('.navbtm');
+    const welcomeMessage = document.getElementById('welcomeMessage');
+
+    const token = localStorage.getItem('token');
+    if (token) {
+        const user = parseJwt(token);
+        if (user) {
+            welcomeMessage.textContent = `Welcome, ${user.name || 'User'}`;
+            navUser.style.display = 'flex';
+            navGuest.style.display = 'none';
+        } else {
+            console.error('JWT is invalid');
+        }
+    } else {
+        navUser.style.display = 'none';
+        navGuest.style.display = 'flex';
+    }
+}
+
+function parseJwt(token) {
+    try {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const decoded = window.atob(base64);
+        return JSON.parse(decoded);
+    } catch (e) {
+        console.error('Error parsing JWT:', e);
+        return null;
+    }
+}
+
+function logoutUser() {
+    localStorage.removeItem('token');
+    window.location.reload();
+}

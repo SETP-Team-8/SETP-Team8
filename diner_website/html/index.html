@@ -10,10 +10,15 @@
 <body>
     <div class="navbar">
         <img src="images/logo.png" alt="logo" class="navlogo">
-        <div class="navbtm">
+        <div class="navbtm" id="navGuest" style="display: none;">
             <a href="discover-more.html">Discover More</a>
             <a href="log-in.html">Log in</a>
             <a href="signup.html">Sign up</a>
+        </div>
+        <div class="navbtm" id="navUser" style="display: none;">
+            <a href="discover-more.html">Discover More</a>
+            <span id="welcomeMessage"></span>
+            <a href="#" onclick="logoutUser()">Log Out</a>
         </div>
     </div>
 

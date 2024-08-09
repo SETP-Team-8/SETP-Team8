@@ -6,7 +6,7 @@
 
 html, body {
     height: 100%;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -25,24 +25,33 @@ html, body {
 .navbtm {
     display: flex;
     margin-left: auto;
-    margin-right: 100px;
     align-items: center;
 }
 
-.navbtm a {
+.navbtm a, .navbtm span {
     font-size: 16px;
-    margin: 0 10px;
+    margin: 0 10px; /* Adjust margins as needed */
     text-decoration: none;
     background-color: #FF5733;
     color: #D9D9D9;
     padding: 5px 10px;
     border-radius: 5px;
+    display: inline-block; /* Ensures proper alignment and spacing */
+}
+
+.navbtm span#welcomeMessage {
+    color: #FF5733; /* Adjust the color to make it more visible */
+    font-weight: bold; /* Make the text bold */
+    padding: 5px 10px; /* Ensure padding is consistent with other elements */
+    background-color: #F0F0F0; /* Optional: add a background color if it fits the design */
+    border-radius: 5px; /* Optional: add border-radius if it fits the design */
+    margin: 0 10px; /* Ensure there is some margin */
 }
 
 .navbtm a:hover {
     background-color: #F0F0F0;
     color: #FF5733;
-    border: #FF5733 1px solid;
+    border: 1px solid #FF5733;
 }
 
 .containerlogin {
@@ -77,7 +86,6 @@ html, body {
     width: 100%;
     max-width: 460px;
     text-align: left;
-    /* margin-left: 35px; */
 }
 
 .inputform select,
@@ -91,6 +99,12 @@ html, body {
     text-align: left;
 }
 
+.button-group {
+    display: flex;
+    justify-content: center; /* Centers the button in the middle */
+    margin-top: 20px; /* Adds space above the button for better layout */
+}
+
 .booknowbtn,
 .signupbtn {
     background-color: #FF5733;
@@ -98,8 +112,9 @@ html, body {
     border-radius: 20px;
     padding: 10px;
     border: none;
-    margin: 10px;
+    margin: 10px auto; /* Centers button in the available space */
     color: white;
+    display: block;
 }
 
 .booknowbtn:hover,
@@ -114,9 +129,8 @@ html, body {
     height: 80px;
     background-color: #F0F0F0;
     align-items: center;
-    padding: 0 20px;
     justify-content: center;
-    min-width: 320px; 
+    min-width: 320px;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -136,6 +150,7 @@ html, body {
     .navbtm {
         margin-right: 0;
         margin-top: 10px;
+        flex-direction: column;
     }
 
     .login {
@@ -150,6 +165,11 @@ html, body {
 
     .inputform select,
     .inputform input {
+        width: calc(100% - 20px);
+    }
+
+    .booknowbtn,
+    .signupbtn {
         width: calc(100% - 20px);
     }
 }

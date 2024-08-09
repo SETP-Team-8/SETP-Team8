@@ -61,7 +61,7 @@ router.post('/login', async (req, res) => {
 
           // Check if the password is defined and compare it
           if (user.Password && bcrypt.compareSync(Password, user.Password)) {
-              const token = jwt.sign({ dinerId: user.DinerID }, process.env.TOKEN_SECRET, { expiresIn: '1h' });
+              const token = jwt.sign({ dinerId: user.DinerID, name: user.FirstName }, process.env.TOKEN_SECRET, { expiresIn: '1h' });
               res.json({ message: 'Login successful', token });
           } else {
               res.status(401).send('Password incorrect');
