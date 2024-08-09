@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/index-style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Dashboard</h2>
+        <ul>
+            <li><a href="html/index.html">Reservations</a></li>
+            <li><a href="html/manage-table.html">Manage Tables</a></li>
+            <li><a href="html/staff-management.html">Staff Management</a></li>
+            <li><a href="html/diner-management.html">User Account Management</a></li>
+            <li><a href="html/restaurant-creation.html">Restaurant Account Management</a></li>
+            <li><a href="html/login.html">Logout</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <section id="reservations">
+            <h2>Reservations</h2>
+            <button id="show-form-btn" onclick="toggleForm()">Add Reservation</button>
+            <form id="add-reservation-form" onsubmit="createReservation(event)" style="display: none;">
+                <div class="form-grid">
+                    <label for="res-name">Name:</label>
+                    <input type="text" id="res-name" name="name" required>
+                    
+                    <label for="res-date">Date:</label>
+                    <input type="date" id="res-date" name="date" required>
+                    
+                    <label for="res-time">Time:</label>
+                    <input type="time" id="res-time" name="time" required>
+                    
+                    <label for="res-table">Table:</label>
+                    <input type="number" id="res-table" name="table" required>
+                    
+                    <label for="res-persons">Persons:</label>
+                    <input type="number" id="res-persons" name="persons" required>
+                    
+                    <label for="res-status">Status:</label>
+                    <select id="res-status" name="status" required>
+                        <option value="Confirmed">Confirmed</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+
+                    <label for="res-booking-by">Booking Made By:</label>
+                    <select id="res-booking-by" name="bookingBy" required>
+                        <option value="Staff">Staff</option>
+                        <option value="Registered User">Registered User</option>
+                        <option value="Non-registered User">Non-registered User</option>
+                    </select>
+
+                    <label for="res-phone">Phone Number:</label>
+                    <input type="tel" id="res-phone" name="phone" required>
+                    
+                    <label for="res-email">Email:</label>
+                    <input type="email" id="res-email" name="email" required>
+                </div>
+                <button type="submit">Create Reservation</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Reservation ID</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Table</th>
+                        <th>Persons</th>
+                        <th>Status</th>
+                        <th>Booking Made By</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="reservation-table-body">
+                    <!-- Reservation rows will be added here dynamically -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="js/functions.js"></script> <!-- Assuming JavaScript functions are moved to a separate file in a 'javascript' folder -->
+</body>
+</html>

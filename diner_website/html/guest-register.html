@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Registration</title>
+    <link rel="stylesheet" href="css/guest-register-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/logo.png" alt="logo" class="navlogo">
+        <div class="navbtm">
+            <a href="discover-more.html">Discover More</a>
+            <a href="index.html">Home</a>
+            <a href="log-in.html">Sign in</a>
+        </div>
+    </div>
+
+    <div class="containerlogin">
+        <div class="login">
+            <img src="images/logo2.png" alt="">
+            <div class="inputform">
+                <select name="gender" required>
+                    <option value="Mr">Mr</option>
+                    <option value="Ms">Ms</option>
+                    <option value="Mrs">Mrs</option>
+                </select>
+                <input type="text" class="firstname" placeholder="Firstname" required>
+                <input type="text" class="lastname" placeholder="Lastname" required>
+                <input type="tel" class="phonenumber" placeholder="Phone" pattern="[0-9]{10}" maxlength="11" required>
+                <input type="email" class="email" placeholder="Enter Your Email address">
+                <button class="booknowbtn">Book now</button>
+                <a href="signup.html"><button class="signupbtn">Sign Up</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span>@2024 Team8 all rights reserved</span>
+    </div>
+
+    <script src="js/guest-register.js"></script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.navbar {
+    display: flex;
+    height: 80px;
+    background-color: #F0F0F0;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%; 
+}
+
+.navlogo {
+    height: 60px;
+}
+
+.navbtm {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.navbtm a {
+    font-size: 16px;
+    margin: 0 10px;
+    text-decoration: none;
+    background-color: #FF5733;
+    color: #D9D9D9;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.navbtm a:hover {
+    background-color: #F0F0F0;
+    color: #FF5733;
+    border: 1px solid #FF5733;
+}
+
+.container1 {
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    width: 100%; 
+    
+    
+  
+    
+}
+
+.containersearchbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 60%; 
+    max-width: 900px;
+}
+
+.search {
+    padding: 10px;
+    width: 100%; 
+    max-width: 400px; 
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.searchbtn {
+    padding: 10px 20px;
+    background-color: #FF5733;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.searchbtn:hover {
+    background-color: #F0F0F0;
+    color: #FF5733;
+    border: 1px solid #FF5733;
+}
+
+.containerimg{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    max-width: 500px;
+}
+
+.containerimg img {
+    display: block;
+    margin: 0 auto;
+    height: 250px;
+}
+
+.sologanlarge {
+    margin-top: 10px;
+    font-size: 25px;
+    color: #FF5733;
+}
+
+.sologansmall {
+    margin-top: 2px;
+    font-size: 16px;
+    color: #FF5733;
+}
+
+.container2, .container3 {
+    padding: 20px;
+    flex-grow: 1;
+    width: 100%; 
+}
+
+
+.container2 a, .container3 a{
+    text-decoration: none;
+}
+
+.caption {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.cadcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cad {
+    border: 1px solid #444444;
+    height: 250px;
+    width: 100%; 
+    max-width: 300px; 
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background-color: #FF5733;
+}
+
+.cadimg img {
+    width: 100%; 
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.cadcaption {
+    padding: 10px;
+    text-align: left;
+}
+
+.fa-star {
+    color: gold;
+}
+
+.resturantcaption {
+    color: white;
+    font-size: 18px;
+}
+
+.rating {
+    color: white;
+}
+
+.footer {
+    display: flex;
+    height: 80px;
+    background-color: #F0F0F0;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    width: 100%; 
+}
+
+.footer span {
+    font-size: 18px;
+    color: #FF5733;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .navbtm {
+        margin-right: 0;
+        margin-top: 10px;
+        flex-direction: column; 
+    }
+
+    .container1 {
+        height: auto;
+        padding: 10px;
+    }
+
+    .sologanlarge {
+        font-size: 20px;
+    }
+
+    .sologansmall {
+        font-size: 14px;
+    }
+
+    .cadcontainer {
+        flex-direction: column;
+    }
+
+    .cad {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navlogo {
+        height: 50px;
+    }
+
+    .navbtm a {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .container1 {
+        padding: 10px;
+    }
+
+    .search {
+        width: 100%;
+        max-width: none; 
+    }
+
+    .searchbtn {
+        padding: 10px;
+        margin-left: 0;
+    }
+
+    .containerimg img {
+        height: auto;
+        max-height: 200px;
+    }
+
+    .sologanlarge {
+        font-size: 18px;
+    }
+
+    .sologansmall {
+        font-size: 12px;
+    }
+
+    .cadcontainer {
+        flex-direction: column;
+    }
+
+    .cad {
+        width: 100%;
+        margin: 10px 0; 
+    }
+}

@@ -7,11 +7,10 @@ const { body, validationResult } = require('express-validator'); // validation
 const { authenticateToken } = require('../routes/authentication');
 
 // POST: Register a new diner
-router.post('/register', [
+router.post('/signup', [
   body('Title').notEmpty().withMessage('Title is required'),
   body('FirstName').notEmpty().withMessage('First name is required'),
   body('LastName').notEmpty().withMessage('Last name is required'),
-  body('Username').notEmpty().withMessage('Username is required'),
   body('Email').isEmail().withMessage('Must be a valid email address'),
   body('Password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters long'),
   body('ConfirmPassword').custom((value, { req }) => {

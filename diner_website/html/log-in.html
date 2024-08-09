@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/log-in-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/logo.png" alt="logo" class="navlogo">
+        <div class="navbtm">
+            <a href="discover-more.html">Discover More</a>
+            <a href="index.html">Home</a>
+            <a href="signup.html">Sign up</a>
+        </div>
+    </div>
+
+    <div class="containerlogin">
+        <div class="login">
+            <div class="welcomelogin">
+                <span>Welcome! Login or sign up to continue</span>
+                <img src="images/logo2.png" alt="">
+            </div>
+
+            <div class="inputform" id="loginForm">
+                <span>Username</span>
+                <input type="text" id="Username" name="identifier" placeholder="Enter email address">
+                <span>Password</span>
+                <input type="Password" id="Password" name="Password" placeholder="Enter your password">
+                <div class="invalidpassword" id="errorMessage" style="display: none;">
+                    <span>*invalid Username or Password</span>
+                </div>
+                <button type="button" class="btmfor" onclick="submitLoginForm()">Sign In</button>
+                <p>Non-members click here to register for an account</p>
+                <a href="signup.html"><button type="button" class="btmfor">Sign Up</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span>@2024 Team8 all rights reserved</span>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

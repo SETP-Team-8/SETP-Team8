@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden; 
+}
+
+.navbar {
+    display: flex;
+    height: 80px;
+    background-color: #F0F0F0;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 320px;
+}
+
+.navlogo {
+    height: 60px;
+}
+
+.navbtm {
+    display: flex;
+    margin-left: auto;
+    margin-right: 100px;
+    align-items: center;
+}
+
+.navbtm a {
+    font-size: 16px;
+    margin: 0 10px;
+    text-decoration: none;
+    background-color: #FF5733;
+    color: #D9D9D9;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.navbtm a:hover {
+    background-color: #F0F0F0;
+    color: #FF5733;
+    border: #FF5733 1px solid;
+}
+
+.containerlogin {
+    min-height: calc(100vh - 160px);
+    background-color: #FF5733;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    padding: 20px;
+}
+
+.login {
+    width: 100%;
+    max-width: 500px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.login img {
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.inputform {
+    width: 100%;
+    max-width: 460px;
+    text-align: left;
+    /* margin-left: 35px; */
+}
+
+.inputform select,
+.inputform input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    display: block;
+    text-align: left;
+}
+
+.booknowbtn,
+.signupbtn {
+    background-color: #FF5733;
+    width: 180px;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    margin: 10px;
+    color: white;
+}
+
+.booknowbtn:hover,
+.signupbtn:hover {
+    background-color: #F0F0F0;
+    color: #FF5733;
+    border: #FF5733 1px solid;
+}
+
+.footer {
+    display: flex;
+    height: 80px;
+    background-color: #F0F0F0;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: center;
+    min-width: 320px; 
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer span {
+    font-size: 18px;
+    color: #FF5733;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .navbtm {
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    .login {
+        width: 90%;
+        height: auto;
+    }
+
+    .inputform {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .inputform select,
+    .inputform input {
+        width: calc(100% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .login {
+        width: 100%;
+    }
+
+    .inputform {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .inputform select,
+    .inputform input {
+        width: calc(100% - 20px);
+    }
+
+    .booknowbtn,
+    .signupbtn {
+        width: calc(100% - 20px);
+    }
+}

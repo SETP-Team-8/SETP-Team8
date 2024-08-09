@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox</title>
+    <link rel="stylesheet" href="../css/index-style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Dashboard</h2>
+        <ul>
+            <li><a href="index.html">Reservations</a></li>
+            <li><a href="manage-table.html">Manage Tables</a></li>
+            <li><a href="staff-management.html">Staff Management</a></li>
+            <li><a href="diner-management.html">User Account Management</a></li>
+            <li><a href="restaurant-creation.html">Restaurant Account Management</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <section id="inbox">
+            <h2>Inbox</h2>
+            <div class="message-box">
+                <h3>Messages</h3>
+                <div id="message-list">
+                    <!-- Messages will be dynamically loaded here -->
+                    <p><strong>htoo:</strong> Hello</p>
+                </div>
+                <h3>Reply</h3>
+                <textarea id="reply-message" rows="4" placeholder="Type your reply here..."></textarea>
+                <button onclick="sendReply()">Send Reply</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/messages.js"></script>
+</body>
+</html>

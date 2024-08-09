@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  
+
+html, body {
+    height: 100%;
+    overflow-x: hidden; 
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    height: 80px;
+    background-color: #F0F0F0;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 320px;
+}
+
+.navlogo {
+    height: 60px;
+}
+
+.navbtm {
+    display: flex;
+    margin-left: auto;
+    margin-right: 100px;
+    align-items: center;
+}
+
+.navbtm a {
+    font-size: 16px;
+    margin: 0 10px;
+    text-decoration: none;
+    background-color: #FF5733;
+    color: #D9D9D9;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.navbtm a:hover {
+    background-color: #F0F0F0;
+    color: #FF5733;
+    border: #FF5733 1px solid;
+}
+
+/* Container Login */
+.containerlogin {
+    min-height: calc(100vh - 160px);
+    background-color: #FF5733;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Login */
+.login {
+    width: 100%;
+    max-width: 500px;
+    background-color: #D9D9D9;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.login img {
+    height: 100px;
+}
+
+/* Input Form */
+.inputform {
+    width: 100%;
+    max-width: 460px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.inputform select,
+.inputform input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px auto;
+    display: block;
+    text-align: left;
+}
+
+.passwordconfirmtext,
+.emailconfirmtext {
+    text-align: center;
+    color: red;
+    display: block;
+}
+
+.signupbtn {
+    background-color: #FF5733;
+    width: 180px;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.signupbtn:hover {
+    background-color: #F0F0F0;
+    color: #FF5733;
+    border: #FF5733 1px solid;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    height: 50px;
+    background-color: #F0F0F0;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: center;
+    min-width: 320px; 
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer span {
+    font-size: 18px;
+    color: #FF5733;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .navbtm {
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    .login {
+        width: 100%;
+        max-width: 90%;
+        height: auto;
+    }
+
+    .inputform {
+        width: 100%;
+        margin-left: 0;
+    }
+}

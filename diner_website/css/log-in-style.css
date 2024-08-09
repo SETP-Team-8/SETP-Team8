@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* for nav bar */
+.navbar {
+    display: flex;
+    height: 80px;
+    background-color: #F0F0F0;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 320px;
+}
+
+.navlogo {
+    height: 60px;
+}
+
+.navbtm {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.navbtm a {
+    font-size: 16px;
+    margin: 0 10px;
+    text-decoration: none;
+    background-color: #FF5733;
+    color: #D9D9D9;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.navbtm a:hover {
+    background-color: #F0F0F0;
+    color: #FF5733;
+    border: #FF5733 1px solid;
+}
+
+/* for nav bar */
+
+/* for container login */
+.containerlogin {
+    min-height: calc(100vh - 160px);
+    background-color: #FF5733;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* for container login */
+
+/* for login */
+.login {
+    width: 100%;
+    max-width: 800px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+/* for welcome */
+.welcomelogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.welcomelogin span {
+    font-size: 25px;
+    color: #FF5733;
+    margin: 20px 0;
+}
+
+.welcomelogin img {
+    height: 150px;
+    margin: 20px 0;
+}
+
+/* for welcome */
+
+/* for login */
+.inputform {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputform span {
+    font-size: 16px;
+    color: #FF5733;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+.inputform input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.invalidpassword span {
+    color: red;
+}
+
+.inputform button {
+    margin: 10px 0;
+    width: 200px;
+    background-color: #FF5733;
+    padding: 10px;
+    border-radius: 12px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.inputform button:hover{
+    background-color: #F0F0F0;
+    color: #FF5733;
+    border: #FF5733 1px solid;
+}
+
+.inputform p {
+    color: #FF5733;
+    margin-top: 10px;
+}
+
+/* for login */
+
+/* for footer */
+.footer {
+    display: flex;
+    height: 30px; 
+    background-color: #F0F0F0;
+    align-items: center;
+    justify-content: center;
+    min-width: 320px;
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+}
+
+.footer span {
+    font-size: 14px; 
+    color: #FF5733;
+}
+/* for footer */
+
+/* responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .navbtm {
+        margin-right: 0;
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .navbtm a {
+        margin: 5px 0;
+    }
+
+    .containerlogin {
+        padding: 10px;
+    }
+
+    .login {
+        width: 100%;
+        max-width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .welcomelogin img {
+        height: 120px;
+    }
+
+    .inputform button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navlogo {
+        height: 50px;
+    }
+
+    .navbtm a {
+        font-size: 14px;
+    }
+
+    .containerlogin {
+        padding: 10px;
+    }
+
+    .welcomelogin span {
+        font-size: 18px;
+    }
+
+    .welcomelogin img {
+        height: 100px;
+    }
+
+    .inputform span {
+        font-size: 14px;
+    }
+
+    .inputform button {
+        width: 100%;
+    }
+}
