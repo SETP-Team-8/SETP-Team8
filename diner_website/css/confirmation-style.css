@@ -1,0 +1,86 @@
+/* confirmation-style.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.navbar {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navlogo {
+    width: 100px;
+}
+
+#navUser a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.containerlogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.login {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+}
+
+#confirmation h1 {
+    color: #ff4500;
+    text-align: center;
+}
+
+#confirmation p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+#confirmation p strong {
+    color: #333;
+}
+
+#confirmation span {
+    float: right;
+}
+
+button {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #e63900;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -9,7 +9,6 @@ subImages.forEach((subImage) => {
     subImage.addEventListener('click', () => {
         if (mainImage && subImage.src) {
             mainImage.src = subImage.src;
-            // Add a class to indicate this is the currently active thumbnail
             subImages.forEach(img => img.classList.remove('active'));
             subImage.classList.add('active');
         } else {
@@ -18,7 +17,6 @@ subImages.forEach((subImage) => {
     });
 });
 
-// Preload images for smoother transitions
 function preloadImages() {
     subImages.forEach(image => {
         const img = new Image();
@@ -26,12 +24,6 @@ function preloadImages() {
     });
 }
 
-window.onload = function() {
-    preloadImages();
-    updateNav();  // Update navigation based on user status
-};
-
-// Function to update the navigation bar
 function updateNav() {
     const navUser = document.getElementById('navUser');
     const navGuest = document.querySelector('.navbtm');
@@ -69,3 +61,31 @@ function logoutUser() {
     localStorage.removeItem('token');
     window.location.reload();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const bookingForm = document.getElementById('bookingForm');
+
+    bookingForm.addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent the form from submitting via HTTP
+
+        const numberOfGuests = document.querySelector('.numberofguests').value;  // Retrieve the number of guests
+        const reservationDate = document.querySelector('.reservationdate').value; // Retrieve the reservation date
+        const reservationTime = document.querySelector('.reservationtime').value; // Retrieve the reservation time
+
+        const selectedDate = new Date(reservationDate);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);  // Normalize today's date
+
+        // Check if the date is set and valid
+        if (!reservationDate || selectedDate < today) {
+            alert("Please select a date that is today or in the future.");
+            return;  // Stop execution if date is not valid
+        }
+
+        // Redirect to the reservations page with parameters
+        window.location.href = `reservations.html?numberOfGuests=${numberOfGuests}&date=${reservationDate}&time=${reservationTime}`;
+    });
+
+    preloadImages();
+    updateNav();
+});

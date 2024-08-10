@@ -1,32 +1,77 @@
 document.addEventListener('DOMContentLoaded', function() {
-    updateNav(); // Check user status and update navigation accordingly
-    attachFormEvents();
+    updateNav(); // Check user status and update navigation
+    attachFormEvents(); // Attach event handlers for form submission
+    populateFormDataFromURL(); // Populate form from URL parameters
+    fetchDinerInfo(); // Fetch and populate diner information if logged in
 });
+
+function fetchDinerInfo() {
+    const token = localStorage.getItem('token');
+    if (token) {
+        const dinerId = parseJwt(token).dinerId; // Correctly accessing the dinerId from JWT
+        if (dinerId) {
+            fetch(`http://localhost:3000/api/diners/${dinerId}`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data) {
+                    document.querySelector('.title').value = data.Title || 'Mr'; // Default to 'Mr' if title is not specified
+                    document.querySelector('.firstname').value = data.FirstName || '';
+                    document.querySelector('.lastname').value = data.LastName || '';
+                    document.querySelector('.phonenumber').value = data.PhoneNumber || '';
+                    document.querySelector('.email').value = data.Email || '';
+                }
+            })
+            .catch(error => console.error('Failed to fetch diner info:', error));
+        }
+    }
+}
+
+function collectFormData() {
+    return {
+        FirstName: document.querySelector('.firstname').value,
+        LastName: document.querySelector('.lastname').value,
+        PhoneNumber: document.querySelector('.phonenumber').value,
+        Email: document.querySelector('.email').value,
+        ReservationDate: document.querySelector('.reservationdate').value,
+        ReservationTime: document.querySelector('.reservationtime').value,
+        NumberOfGuests: document.querySelector('.numberofguests').value,
+    };
+}
+
+function populateFormDataFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const numberOfGuests = params.get('numberOfGuests');
+    const reservationDate = params.get('date');
+    const reservationTime = params.get('time');
+
+    if (numberOfGuests) document.querySelector('.numberofguests').value = numberOfGuests;
+    if (reservationDate) document.querySelector('.reservationdate').value = reservationDate;
+    if (reservationTime) document.querySelector('.reservationtime').value = reservationTime;
+}
 
 function updateNav() {
     const navUser = document.getElementById('navUser');
-    const navGuest = document.querySelector('.navbtm'); // Assuming navGuest is the guest user navigation container
+    const navGuest = document.querySelector('.navbtm');
     const welcomeMessage = document.getElementById('welcomeMessage');
-    const bookNowBtn = document.querySelector('.booknowbtn');
-    const signUpBtn = document.querySelector('.signupbtn');
-
     const token = localStorage.getItem('token');
+
     if (token) {
         const user = parseJwt(token);
         if (user && user.name) {
             welcomeMessage.textContent = `Welcome, ${user.name}`;
-            navUser.style.display = 'flex'; // Show user specific navigation
-            navGuest.style.display = 'none'; // Hide guest navigation
-            bookNowBtn.style.display = 'block'; // Show only book now button
-            signUpBtn.style.display = 'none'; // Hide signup button
+            navUser.style.display = 'flex';
+            navGuest.style.display = 'none';
         } else {
             console.error('JWT is invalid or does not contain a name');
         }
     } else {
-        navUser.style.display = 'none'; // Hide user specific navigation
-        navGuest.style.display = 'flex'; // Show guest navigation
-        bookNowBtn.style.display = 'block'; // Ensure book now is visible for guests
-        signUpBtn.style.display = 'block'; // Show signup button for guests
+        navUser.style.display = 'none';
+        navGuest.style.display = 'flex';
     }
 }
 
@@ -34,8 +79,8 @@ function parseJwt(token) {
     try {
         const base64Url = token.split('.')[1];
         const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        const decoded = window.atob(base64);
-        return JSON.parse(decoded);
+        const decoded = JSON.parse(window.atob(base64));
+        return decoded;
     } catch (e) {
         console.error('Error parsing JWT:', e);
         return null;
@@ -48,20 +93,70 @@ function logoutUser() {
 }
 
 function attachFormEvents() {
-    const bookNowBtn = document.querySelector('.booknowbtn');
-    const signUpBtn = document.querySelector('.signupbtn');
-
-    bookNowBtn.addEventListener('click', () => {
-        const firstName = document.querySelector('.firstname').value;
-        const lastName = document.querySelector('.lastname').value;
-        const phone = document.querySelector('.phonenumber').value;
-        const email = document.querySelector('.email').value;
-
-        console.log(`Booking details: ${firstName} ${lastName}, Phone: ${phone}, Email: ${email}`);
-        // Here you would typically implement an API call or form submission logic
+    const reservationForm = document.querySelector('.inputform');
+    reservationForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        createReservation();
     });
+}
 
-    signUpBtn.addEventListener('click', () => {
-        window.location.href = 'signup.html';
+function createReservation() {
+    const token = localStorage.getItem('token');
+    let dinerID = token ? parseJwt(token).sub : null; // Sub is typically used for the user ID
+    const formData = {
+        FirstName: document.querySelector('.firstname').value,
+        LastName: document.querySelector('.lastname').value,
+        PhoneNumber: document.querySelector('.phonenumber').value,
+        Email: document.querySelector('.email').value,
+        ReservationDate: document.querySelector('.reservationdate').value,
+        ReservationTime: document.querySelector('.reservationtime').value,
+        NumberOfGuests: document.querySelector('.numberofguests').value,
+        DinerID: token ? parseJwt(token).dinerId : null,
+        RestaurantID: '1' // Assuming a fixed restaurant ID for simplicity
+    };
+
+    fetch('/api/reservations', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to create reservation');
+        }
+        return response.json();  // Ensure to parse the response as JSON
+    })
+    .then(data => {
+        if (data.reservationId) {
+            console.log('Reservation created successfully:', data);
+            // Redirect with all necessary query parameters
+            window.location.href = `confirmation.html?firstName=${encodeURIComponent(formData.FirstName)}&reservationId=${data.reservationId}&date=${encodeURIComponent(formData.ReservationDate)}&time=${encodeURIComponent(formData.ReservationTime)}`;
+        } else {
+            throw new Error('Reservation ID not found');
+        }
+    })
+    .catch(error => {
+        console.error('Error creating reservation:', error);
+        alert('An error occurred while creating the reservation.');
     });
+}
+
+function parseJwt(token) {
+    try {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const decoded = JSON.parse(window.atob(base64));
+        return decoded;
+    } catch (e) {
+        console.error('Error parsing JWT:', e);
+        return null;
+    }
+}
+
+function logoutUser() {
+    localStorage.removeItem('token');
+    window.location.reload();
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Confirmation</title>
+    <link rel="stylesheet" href="css/confirmation-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/logo.png" alt="logo" class="navlogo">
+        <div id="navUser" style="display: none;">
+            <a href="#" onclick="logoutUser()">Log Out</a>
+        </div>
+    </div>
+
+    <div class="containerlogin">
+        <div class="login">
+            <div id="confirmation">
+                <h1>Reservation Confirmed!</h1>
+                <p>Thank you for your reservation. Here are your booking details:</p>
+                <p><strong>First Name:</strong> <span id="firstName">Not specified</span></p>
+                <p><strong>Reservation ID:</strong> <span id="reservationId">Not specified</span></p>
+                <p><strong>Date:</strong> <span id="date">Not specified</span></p>
+                <p><strong>Time:</strong> <span id="time">Not specified</span></p>
+                <button onclick="location.href='index.html'">Return to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span>@2024 Team8 all rights reserved</span>
+    </div>
+
+    <script src="js/confirmation.js"></script>
+</body>
+</html>

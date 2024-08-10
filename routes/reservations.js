@@ -10,7 +10,7 @@ router.post('/', async function(req, res) {
     INSERT INTO Reservations (ReservationDate, ReservationTime, NumberOfGuests, NumberOfChildren, SpecialRequests, DinerID, RestaurantID, TableID)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `;
-    const values = [ReservationDate, ReservationTime, NumberOfGuests, NumberOfChildren, SpecialRequests, DinerID, RestaurantID, TableID];
+    const values = [ReservationDate, ReservationTime, NumberOfGuests, NumberOfChildren || null, SpecialRequests || null, DinerID, RestaurantID, TableID || null];
     try {
         const [result] = await pool.query(query, values);
         res.status(201).send({ message: 'Reservation created', reservationId: result.insertId });

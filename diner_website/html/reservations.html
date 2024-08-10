@@ -14,11 +14,10 @@
             <a href="discover-more.html">Discover More</a>
             <a href="index.html">Home</a>
             <a href="log-in.html" id="signInButton">Sign In</a>
-            <a href="signup.html" id="signUpButton" style="display: none;">Sign Up</a>
         </div>
         <div class="navbtm" id="navUser" style="display: none;">
-            <a href="index.html">Home</a>&nbsp;
-            <span id="welcomeMessage"></span>&nbsp;
+            <a href="index.html">Home</a>
+            <span id="welcomeMessage"></span>
             <a href="#" onclick="logoutUser()">Log Out</a>
         </div>
     </div>
@@ -26,8 +25,8 @@
     <div class="containerlogin">
         <div class="login">
             <img src="images/logo2.png" alt="">
-            <div class="inputform">
-                <select name="gender" required>
+            <form class="inputform">
+                <select class="title" required>
                     <option value="Mr">Mr</option>
                     <option value="Ms">Ms</option>
                     <option value="Mrs">Mrs</option>
@@ -35,12 +34,15 @@
                 <input type="text" class="firstname" placeholder="Firstname" required>
                 <input type="text" class="lastname" placeholder="Lastname" required>
                 <input type="tel" class="phonenumber" placeholder="Phone" pattern="[0-9]{10}" maxlength="11" required>
-                <input type="email" class="email" placeholder="Enter Your Email address">
+                <input type="email" class="email" placeholder="Enter Your Email address" required>
+                <input type="number" class="numberofguests" placeholder="Number of Guests" required readonly>
+                <input type="date" class="reservationdate" required readonly>
+                <input type="time" class="reservationtime" required readonly>
                 <div class="button-group">
-                    <button class="booknowbtn">Book now</button>
-                    <button class="signupbtn" style="display: none;">Sign Up</button>
+                    <button type="submit" class="booknowbtn">Book now</button>
+                    <button type="button" class="signupbtn" style="display: none;">Sign Up</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 
