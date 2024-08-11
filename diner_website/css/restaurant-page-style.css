@@ -9,7 +9,6 @@ html, body {
     overflow-x: hidden;
 }
 
-/* for nav bar */
 .navbar {
     display: flex;
     height: 80px;
@@ -26,11 +25,10 @@ html, body {
 .navbtm {
     display: flex;
     margin-left: auto;
-    margin-right: 100px;
     align-items: center;
 }
 
-.navbtm a {
+.navbtm a, .navbtm span {
     font-size: 16px;
     margin: 0 10px;
     text-decoration: none;
@@ -38,269 +36,75 @@ html, body {
     color: #D9D9D9;
     padding: 5px 10px;
     border-radius: 5px;
-}
-
-.navbtm span#welcomeMessage {
-    color: #FF5733; /* Adjust the color to make it more visible */
-    font-weight: bold; /* Make the text bold */
-    padding: 5px 10px; /* Ensure padding is consistent with other elements */
-    background-color: #F0F0F0; /* Optional: add a background color if it fits the design */
-    border-radius: 5px; /* Optional: add border-radius if it fits the design */
-    margin: 0 10px; /* Ensure there is some margin */
+    display: inline-block;
 }
 
 .navbtm a:hover {
     background-color: #F0F0F0;
     color: #FF5733;
-    border: #FF5733 1px solid;
+    border: 1px solid #FF5733;
 }
 
-/* for container login */
 .containerlogin {
     min-height: calc(100vh - 160px);
-    height: auto;
     background-color: #FF5733;
     display: flex;
-    text-align: center;
     justify-content: center;
     align-items: center;
     min-width: 320px;
     padding: 20px;
 }
 
-/* for log in */
 .login {
     width: 100%;
-    max-width: 800px;
-    min-width: 300px;
-    height: auto;
+    max-width: 500px;
     background-color: #D9D9D9;
-    justify-content: flex-start;
-    text-align: left;
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;
-}
-
-.resturantname {
-    align-self: left;
-    width: 100%;
-}
-
-.container2 {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    display: flex;
-    border-radius: 10px;
-    flex-wrap: wrap;
     align-items: center;
+    text-align: center;
+}
+
+.restaurantname {
+    font-weight: bold; /* Make the restaurant name bold */
+    font-size: 24px; /* Increase font size for visibility */
+    color: #FF5733; /* Color of the text */
+    margin-bottom: 20px; /* Space below the name */
+}
+
+.find-table-title {
+    font-weight: bold; /* Bold for 'Find a Table' text */
+    color: #D9D9D9; /* Lighter color to match the theme */
+    font-size: 18px; /* Slightly smaller than restaurant name */
 }
 
 .imagecontainer {
-    width: 50%;
-    height: 300px;
-    display: flex;
-    flex-direction: row;
-    border-radius: 10px;
-    margin: 10px;
+    width: 100%; /* Ensures the image container fits within the login area */
+    margin-top: 20px;
 }
 
 .fullimage {
-    width: 70%;
-    height: 100%;
-    background-color: red;
-    border: #FF5733;
+    width: 100%; /* Sets the width to use full space available */
+    height: auto; /* Keeps the aspect ratio of the image */
+    overflow: hidden; /* Hides parts of the image that do not fit in the container */
+    border-radius: 10px; /* Adds rounded corners to the image container */
 }
 
-.subimage {
-    width: 30%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-right: 2px;
+.fullimage img {
+    width: 100%; /* Ensures the image fills the container */
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Removes bottom space/gap under the image */
 }
 
-.subimage1, .subimage2, .subimage3 {
-    width: 100%;
-    height: 33.33%;
-    margin: 2px;
-}
-
-.resturantimage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.bookingcontainer {
-    width: 40%;
-    height: 300px;
-    background-color: #FF5733;
-    display: flex;
-    flex-direction: column;
-    margin-left: 2px;
-    border: #FF5733;
-}
-
-.bookingcontainer span {
-    margin: 10px;
-}
-
-.bookinginputform {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    background-color: #FF5733;
-    align-items: center;
-}
-
-.bookinginput {
-    width: 90%;
-    border-radius: 10px;
-    border: #FF5733;
-    margin: 10px;
-    height: 30px;
-    padding: 4px;
-    color: #FF5733;
-}
-
-.booknow {
-    width: 200px;
-    border-radius: 10px;
-    border: #FF5733;
-    background-color: #D9D9D9;
-    height: 25px;
-}
-
-.booknow:hover {
-    border: #D9D9D9;
-    background-color: white;
-    color: #FF5733;
-}
-
-.reviewcontainer {
-    display: flex;
-    flex-direction: row;
-}
-
-.starreview {
-    width: 50%;
-    padding-left: 50px;
-    display: flex;
-    align-items: center;
-}
-
-.fa-star, .fa-star-half-alt {
-    color: darkblue;
-    font-size: 14px;
-    margin: 1px;
-}
-
-.number {
-    margin: 5px;
-    color: #FF5733;
-    font-size: 16px;
-}
-
-.ratingreview {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-}
-
-.ratingreview span {
-    color: #FF5733;
-    font-size: 16px;
-}
-
-.foodratingreview, .serviceratingreview {
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
-    align-items: center;
-}
-
-.ratingbarforfood, .ratingbarforservice {
-    width: 180px;
-    height: 10px;
-    border: 1px solid darkblue;
-    margin-left: 20px;
-    margin-right: 10px;
-    border-radius: 10px;
-}
-
-.foodratingbarfill, .serviceratingbarfill {
-    background-color: darkblue;
-    height: 100%;
-    transition: width 0.3s ease;
-}
-
-.foodratingbarfill {
-    width: 70%;
-}
-
-.serviceratingbarfill {
-    width: 75%;
-}
-
-.about {
-    display: flex;
-    flex-direction: row;
-}
-
-.addresscontainer {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-}
-
-.address {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    color: #FF5733;
-}
-
-.tag {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-}
-
-.tag span {
-    color: #FF5733;
-}
-
-.tagword {
-    color: blue !important;
-    margin: 4px 0px;
-}
-
-.opentimecontainer {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    color: #FF5733;
-}
-
-.day {
-    display: flex;
-    flex-direction: column;
-    margin: 3px;
-}
 
 .footer {
     display: flex;
-    height: 50px;
+    height: 80px;
     background-color: #F0F0F0;
     align-items: center;
-    padding: 0 20px;
     justify-content: center;
     min-width: 320px;
     position: absolute;
@@ -323,92 +127,14 @@ html, body {
         margin-right: 0;
         margin-top: 10px;
         flex-direction: column;
-        align-items: center;
-    }
-
-    .navbtm a {
-        margin: 5px 0;
     }
 
     .login {
-        width: 100%;
-        max-width: 90%;
+        width: 90%;
         height: auto;
     }
 
-    .container2 {
-        flex-direction: column;
+    .restaurantname, .find-table-title {
+        text-align: center; /* Center align text on smaller screens */
     }
-
-    .imagecontainer, .bookingcontainer {
-        width: 100%;
-        height: auto;
-    }
-
-    .fullimage, .subimage {
-        width: 100%;
-        height: auto;
-    }
-
-    .subimage1, .subimage2, .subimage3 {
-        height: auto;
-    }
-
-    .subimage img {
-        width: 100%;
-        height: auto;
-    }
-
-    .bookingcontainer span {
-        margin-top: 20px;
-    }
-
-    .bookinginput {
-        width: 95%;
-    }
-
-    .booknow {
-        width: 95%;
-    }
-
-    .reviewcontainer {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .starreview, .ratingreview {
-        width: 100%;
-        padding-left: 0;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .ratingreview {
-        align-items: center;
-    }
-
-    .about {
-        flex-direction: column;
-    }
-
-    .addresscontainer, .opentimecontainer {
-        width: 100%;
-    }
-
-    .footer {
-        flex-direction: column;
-        height: auto;
-        padding: 20px 0;
-    }
-
-    .footer span {
-        margin: 10px 0;
-    }
-}
-
-/* Active thumbnail styling */
-.subimage img.active {
-    border: 2px solid #FF5733; /* Highlight color for active thumbnail */
-    transform: scale(1.05); /* Slightly enlarge the active thumbnail */
-    transition: transform 0.3s ease, border 0.3s ease; /* Smooth transitions */
 }

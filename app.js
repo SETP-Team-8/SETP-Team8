@@ -1,6 +1,7 @@
 require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
+var app = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -35,7 +36,6 @@ app.use('/api/users', usersRouter);
 app.use('/api/restaurants', restaurantsRouter);
 app.use('/api/staff', staffRouter);
 app.use('/api/diners', dinersRouter);
-
 app.use('/', indexRouter); // This can remain without the API prefix if it serves HTML or static content
 
 // catch 404 and forward to error handler
