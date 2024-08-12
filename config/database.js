@@ -1,6 +1,8 @@
 const mysql = require('mysql2');
 
-const pool = mysql.createPool({
+const dbConfig = process.env.JAWSDB_MARIA_URL ? {
+    uri: process.env.JAWSDB_MARIA_URL
+} : {
     host: 'localhost',
     user: 'root',
     password: 'passwordisPassw0rd',
@@ -8,6 +10,8 @@ const pool = mysql.createPool({
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
-});
+};
+
+const pool = mysql.createPool(dbConfig);
 
 module.exports = pool.promise();

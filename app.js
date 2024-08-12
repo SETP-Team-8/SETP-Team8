@@ -8,12 +8,13 @@ var logger = require('morgan');
 var cors = require('cors');
 
 
+
 // Routers
 var reservationsRouter = require('./routes/reservations');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/diners');
 var restaurantsRouter = require('./routes/restaurants');
-var staffRouter = require('./routes/staff'); // Make sure this is imported
+var staffRouter = require('./routes/staff');
 var dinersRouter = require('./routes/diners');
 
 // View engine setup
@@ -34,11 +35,12 @@ app.use('/admin', express.static(path.join(__dirname, 'admin_dashboard', 'html')
 app.use(express.static(path.join(__dirname, 'diner_website')));
 app.use(express.static(path.join(__dirname, 'diner_website', 'html')));
 
+
 // API Routes
 app.use('/api/reservations', reservationsRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/restaurants', restaurantsRouter);
-app.use('/api/staff', staffRouter); // Ensure staff routes are handled here
+app.use('/api/staff', staffRouter);
 app.use('/api/diners', dinersRouter);
 app.use('/', indexRouter);
 
