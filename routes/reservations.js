@@ -1,9 +1,39 @@
-const pool = require('../config/database'); //path to required database.js from the database folder
+const express = require('express');
+const router = express.Router();
+const pool = require('../config/database');
 
-var express = require('express');
-var router = express.Router();
+// GET retrieve reservations by RestaurantID
+router.get('/', async function(req, res) {
+    const restaurantId = req.query.restaurantId;
+    const query = `
+        SELECT 
+            Reservations.ReservationID,
+            Diner.FirstName,
+            Reservations.ReservationDate,
+            Reservations.ReservationTime,
+            Reservations.TableID,
+            Reservations.NumberOfGuests,
+            Diner.PhoneNumber as PhoneNumber,
+            Diner.Email,
+            Reservations.Status
+        FROM 
+            Reservations 
+        JOIN 
+            Diner ON Reservations.DinerID = Diner.DinerID
+        WHERE 
+            Reservations.RestaurantID = ?
+    `;
+    try {
+        const [rows] = await pool.query(query, [restaurantId]);
+        res.json(rows);
+    } catch (err) {
+        console.error('Error fetching reservations:', err);
+        res.status(500).send('Server error: ' + err.message);
+    }
+});
 
-// POST Endpoint for Creating Reservations
+
+// POST Creating Reservations
 router.post('/', async function(req, res) {
     const { ReservationDate, ReservationTime, NumberOfGuests, NumberOfChildren, SpecialRequests, DinerID, RestaurantID, TableID } = req.body;
     const query = `
@@ -20,7 +50,7 @@ router.post('/', async function(req, res) {
     }
 });
 
-// GET Endpoint to Retrieve Reservations
+// GET Retrieve Reservations
 router.get('/', async function(req, res) {
     try {
         const [rows, fields] = await pool.query('SELECT * FROM Reservations');

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     setupBookingForm();
     const params = new URLSearchParams(window.location.search);
-    const restaurantId = params.get('id'); // Assuming you pass restaurant ID in the query string
+    const restaurantId = params.get('id'); 
 
     fetch(`http://localhost:3000/api/restaurants/${restaurantId}`)
     .then(response => response.json())
@@ -99,13 +99,13 @@ function setupBookingForm() {
         return;
     }
 
-    // Capture URL parameters and set form values
+    
     const urlParams = new URLSearchParams(window.location.search);
     const numberOfGuests = urlParams.get('numberOfGuests');
     const date = urlParams.get('date');
     const time = urlParams.get('time');
 
-    // Set the values to form fields if they exist
+    
     const guestsSelect = document.querySelector('.numberofguests');
     const dateInput = document.querySelector('.reservationdate');
     const timeSelect = document.querySelector('.reservationtime');
@@ -122,10 +122,10 @@ function setupBookingForm() {
         timeSelect.value = time;
     }
 
-    // Add event listener to form submission
+    
     bookingForm.addEventListener('submit', function(event) {
-        event.preventDefault();  // Prevent the form from submitting via HTTP
-        // Ensure all fields are filled out
+        event.preventDefault();  
+        
         if (!guestsSelect.value || !dateInput.value || !timeSelect.value) {
             console.error('Form fields are missing');
             return;
@@ -140,7 +140,7 @@ function setupBookingForm() {
             return;
         }
 
-        // Redirect to a confirmation page or handle booking logic
+        
         window.location.href = `reservations.html?numberOfGuests=${guestsSelect.value}&date=${dateInput.value}&time=${timeSelect.value}`;
     });
 }

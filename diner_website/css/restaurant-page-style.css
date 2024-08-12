@@ -69,34 +69,34 @@ html, body {
 }
 
 .restaurantname {
-    font-weight: bold; /* Make the restaurant name bold */
-    font-size: 24px; /* Increase font size for visibility */
-    color: #FF5733; /* Color of the text */
-    margin-bottom: 20px; /* Space below the name */
+    font-weight: bold; 
+    font-size: 24px; 
+    color: #FF5733; 
+    margin-bottom: 20px; 
 }
 
 .find-table-title {
-    font-weight: bold; /* Bold for 'Find a Table' text */
-    color: #D9D9D9; /* Lighter color to match the theme */
-    font-size: 18px; /* Slightly smaller than restaurant name */
+    font-weight: bold; 
+    color: #D9D9D9; 
+    font-size: 18px; 
 }
 
 .imagecontainer {
-    width: 100%; /* Ensures the image container fits within the login area */
+    width: 100%; 
     margin-top: 20px;
 }
 
 .fullimage {
-    width: 100%; /* Sets the width to use full space available */
-    height: auto; /* Keeps the aspect ratio of the image */
-    overflow: hidden; /* Hides parts of the image that do not fit in the container */
-    border-radius: 10px; /* Adds rounded corners to the image container */
+    width: 100%; 
+    height: auto; 
+    overflow: hidden; 
+    border-radius: 10px; 
 }
 
 .fullimage img {
-    width: 100%; /* Ensures the image fills the container */
-    height: auto; /* Maintains the aspect ratio */
-    display: block; /* Removes bottom space/gap under the image */
+    width: 100%; 
+    height: auto; 
+    display: block; 
 }
 
 
@@ -135,6 +135,6 @@ html, body {
     }
 
     .restaurantname, .find-table-title {
-        text-align: center; /* Center align text on smaller screens */
+        text-align: center; 
     }
 }

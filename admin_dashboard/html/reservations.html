@@ -10,12 +10,12 @@
     <div class="sidebar">
         <h2>Admin Dashboard</h2>
         <ul>
-            <li><a href="html/reservations.html">Reservations</a></li>
-            <li><a href="html/manage-table.html">Manage Tables</a></li>
-            <li><a href="html/staff-management.html">Staff Management</a></li>
-            <li><a href="html/diner-management.html">User Account Management</a></li>
-            <li><a href="html/restaurant-creation.html">Restaurant Account Management</a></li>
-            <li><a href="html/login.html">Logout</a></li>
+            <li><a href="reservations.html">Reservations</a></li>
+           <!---- <li><a href="manage-table.html">Manage Tables</a></li> -->
+            <li><a href="staff-management.html">Staff Management</a></li>
+           <!---- <li><a href="diner-management.html">User Account Management</a></li>
+            <li><a href="restaurant-creation.html">Restaurant Account Management</a></li> -->
+            <li><a href="login.html">Logout</a></li>
         </ul>
     </div>
     <div class="main-content">
@@ -46,13 +46,6 @@
                         <option value="Rejected">Rejected</option>
                     </select>
 
-                    <label for="res-booking-by">Booking Made By:</label>
-                    <select id="res-booking-by" name="bookingBy" required>
-                        <option value="Staff">Staff</option>
-                        <option value="Registered User">Registered User</option>
-                        <option value="Non-registered User">Non-registered User</option>
-                    </select>
-
                     <label for="res-phone">Phone Number:</label>
                     <input type="tel" id="res-phone" name="phone" required>
                     
@@ -71,19 +64,18 @@
                         <th>Table</th>
                         <th>Persons</th>
                         <th>Status</th>
-                        <th>Booking Made By</th>
                         <th>Phone Number</th>
                         <th>Email</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="reservation-table-body">
-                    <!-- Reservation rows will be added here dynamically -->
+                    
                 </tbody>
             </table>
         </section>
     </div>
 
-    <script src="js/reservations.js"></script> <!-- Assuming JavaScript functions are moved to a separate file in a 'javascript' folder -->
+    <script src="js/reservations.js"></script> 
 </body>
 </html>

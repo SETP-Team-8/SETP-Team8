@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     updateNav();
-    fetchAllRestaurants(); // Fetch and display all restaurants on load
+    fetchAllRestaurants(); 
 });
 
 function updateNav() {
@@ -34,7 +34,7 @@ function fetchAllRestaurants() {
     .then(response => response.json())
     .then(restaurants => {
         const container = document.querySelector('.cadcontainer');
-        container.innerHTML = ''; // Clear previous content
+        container.innerHTML = ''; 
         restaurants.forEach(restaurant => {
             const restaurantElement = createRestaurantCard(restaurant);
             container.appendChild(restaurantElement);

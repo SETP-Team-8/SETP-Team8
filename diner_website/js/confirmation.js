@@ -13,5 +13,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function logoutUser() {
     localStorage.removeItem('token');
-    window.location.href = 'index.html'; // Redirect to home on logout
+    window.location.href = 'index.html'; 
 }

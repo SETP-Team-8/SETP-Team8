@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    updateNav(); // Check user status and update navigation
-    attachFormEvents(); // Attach event handlers for form submission
-    populateFormDataFromURL(); // Populate form from URL parameters
-    fetchDinerInfo(); // Fetch and populate diner information if logged in
+    updateNav(); 
+    attachFormEvents(); 
+    populateFormDataFromURL(); 
+    fetchDinerInfo(); 
 });
 
 function fetchDinerInfo() {
     const token = localStorage.getItem('token');
     if (token) {
-        const dinerId = parseJwt(token).dinerId; // Correctly accessing the dinerId from JWT
+        const dinerId = parseJwt(token).dinerId; 
         if (dinerId) {
             fetch(`http://localhost:3000/api/diners/${dinerId}`, {
                 method: 'GET',
@@ -19,7 +19,7 @@ function fetchDinerInfo() {
             .then(response => response.json())
             .then(data => {
                 if (data) {
-                    document.querySelector('.title').value = data.Title || 'Mr'; // Default to 'Mr' if title is not specified
+                    document.querySelector('.title').value = data.Title || 'Mr'; 
                     document.querySelector('.firstname').value = data.FirstName || '';
                     document.querySelector('.lastname').value = data.LastName || '';
                     document.querySelector('.phonenumber').value = data.PhoneNumber || '';
@@ -102,7 +102,7 @@ function attachFormEvents() {
 
 function createReservation() {
     const token = localStorage.getItem('token');
-    let dinerID = token ? parseJwt(token).sub : null; // Sub is typically used for the user ID
+    let dinerID = token ? parseJwt(token).sub : null; 
     const formData = {
         FirstName: document.querySelector('.firstname').value,
         LastName: document.querySelector('.lastname').value,
@@ -112,7 +112,7 @@ function createReservation() {
         ReservationTime: document.querySelector('.reservationtime').value,
         NumberOfGuests: document.querySelector('.numberofguests').value,
         DinerID: token ? parseJwt(token).dinerId : null,
-        RestaurantID: '1' // Assuming a fixed restaurant ID for simplicity
+        RestaurantID: '1' 
     };
 
     fetch('/api/reservations', {
@@ -127,12 +127,12 @@ function createReservation() {
         if (!response.ok) {
             throw new Error('Failed to create reservation');
         }
-        return response.json();  // Ensure to parse the response as JSON
+        return response.json();  
     })
     .then(data => {
         if (data.reservationId) {
             console.log('Reservation created successfully:', data);
-            // Redirect with all necessary query parameters
+            
             window.location.href = `confirmation.html?firstName=${encodeURIComponent(formData.FirstName)}&reservationId=${data.reservationId}&date=${encodeURIComponent(formData.ReservationDate)}&time=${encodeURIComponent(formData.ReservationTime)}`;
         } else {
             throw new Error('Reservation ID not found');

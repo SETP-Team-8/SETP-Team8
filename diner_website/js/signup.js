@@ -27,10 +27,10 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
     })
     .then(data => {
         console.log('Success:', data);
-        window.location.href = 'index.html'; // Redirect on successful signup
+        window.location.href = 'index.html'; 
     })
     .catch((error) => {
         console.error('Error:', error);
-        alert(error.message); // Display error message to the user
+        alert(error.message); 
     });
 });

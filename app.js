@@ -1,7 +1,7 @@
 require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
-var app = express(); // Only initialize once
+var app = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -19,14 +19,14 @@ var dinersRouter = require('./routes/diners');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// Middlewares
+// Middleware
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
 
-// Static files
+// Static
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/admin', express.static(path.join(__dirname, 'admin_dashboard')));
 app.use('/admin', express.static(path.join(__dirname, 'admin_dashboard', 'html')));
@@ -53,5 +53,7 @@ app.use(function(err, req, res, next) {
     title: 'Error Page'
   });
 });
+
+
 
 module.exports = app;

@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     updateNav();
-    fetchRestaurants(); // Fetch and display restaurants on load
+    fetchRestaurants(); 
 });
 
 function updateNav() {
     const token = localStorage.getItem('token');
     if (token) {
-        // Decode JWT to read the payload
+        
         const base64Url = token.split('.')[1];
         const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
         const payload = JSON.parse(window.atob(base64));
@@ -65,14 +65,14 @@ function createRestaurantCard(restaurant) {
     const card = document.createElement('a');
     card.href = `restaurant-page.html?id=${restaurant.RestaurantID}`;
     card.classList.add('cad');
-    let imagePath = restaurant.ImagePath || 'images/default.png'; // Fallback to default if undefined
+    let imagePath = restaurant.ImagePath || 'images/default.png'; 
 
-    // Ensure there's no leading slash or double directory issue
+    
     if (imagePath.startsWith('/')) {
-        imagePath = imagePath.slice(1); // remove leading slash if it exists
+        imagePath = imagePath.slice(1); 
     }
     if (!imagePath.startsWith('images/')) {
-        imagePath = `images/${imagePath}`; // ensure the path starts with 'images/'
+        imagePath = `images/${imagePath}`; 
     }
 
     card.innerHTML = `

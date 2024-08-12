@@ -44,7 +44,7 @@ function editRestaurant(button) {
     const cells = row.querySelectorAll('td');
 
     cells.forEach(cell => {
-        if (cell !== cells[0] && cell !== cells[6]) { // Exclude the ID and Actions column from editing
+        if (cell !== cells[0] && cell !== cells[6]) { 
             cell.contentEditable = true;
         }
     });

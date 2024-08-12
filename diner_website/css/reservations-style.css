@@ -30,22 +30,22 @@ html, body {
 
 .navbtm a, .navbtm span {
     font-size: 16px;
-    margin: 0 10px; /* Adjust margins as needed */
+    margin: 0 10px; 
     text-decoration: none;
     background-color: #FF5733;
     color: #D9D9D9;
     padding: 5px 10px;
     border-radius: 5px;
-    display: inline-block; /* Ensures proper alignment and spacing */
+    display: inline-block; 
 }
 
 .navbtm span#welcomeMessage {
-    color: #FF5733; /* Adjust the color to make it more visible */
-    font-weight: bold; /* Make the text bold */
-    padding: 5px 10px; /* Ensure padding is consistent with other elements */
-    background-color: #F0F0F0; /* Optional: add a background color if it fits the design */
-    border-radius: 5px; /* Optional: add border-radius if it fits the design */
-    margin: 0 10px; /* Ensure there is some margin */
+    color: #FF5733; 
+    font-weight: bold; 
+    padding: 5px 10px; 
+    background-color: #F0F0F0; 
+    border-radius: 5px; 
+    margin: 0 10px; 
 }
 
 .navbtm a:hover {
@@ -101,8 +101,8 @@ html, body {
 
 .button-group {
     display: flex;
-    justify-content: center; /* Centers the button in the middle */
-    margin-top: 20px; /* Adds space above the button for better layout */
+    justify-content: center; 
+    margin-top: 20px; 
 }
 
 .booknowbtn,
@@ -112,7 +112,7 @@ html, body {
     border-radius: 20px;
     padding: 10px;
     border: none;
-    margin: 10px auto; /* Centers button in the available space */
+    margin: 10px auto; 
     color: white;
     display: block;
 }

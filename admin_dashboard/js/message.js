@@ -11,7 +11,7 @@ function sendReply() {
     }
 
     const reservationId = getReservationId();
-    // Here you would typically send the reply to the server via an AJAX request
+    
     alert(`Reply sent for reservation ID ${reservationId}: ${replyMessage}`);
-    document.getElementById('reply-message').value = ''; // Clear the textarea
+    document.getElementById('reply-message').value = ''; 
 }

@@ -10,7 +10,7 @@ router.post('/login', async (req, res) => {
   try {
     // Join the Staff table with the Restaurant table
     const query = `
-      SELECT Staff.FirstName, Staff.Role, Staff.Password, Restaurant.Name as RestaurantName
+      SELECT Staff.FirstName, Staff.Role, Staff.Password, Restaurant.Name as RestaurantName, Restaurant.RestaurantID as RestaurantID
       FROM Staff
       JOIN Restaurant ON Staff.RestaurantID = Restaurant.RestaurantID
       WHERE Staff.Email = ?
@@ -25,9 +25,10 @@ router.post('/login', async (req, res) => {
         res.json({
           message: 'Login successful',
           token: token,
-          staffName: results[0].FirstName, // Send only first name
+          staffName: results[0].FirstName, 
           role: results[0].Role,
-          restaurantName: results[0].RestaurantName // Dynamically fetched restaurant name
+          restaurantName: results[0].RestaurantName,
+          restaurantId: results[0].RestaurantID
         });
       } else {
         console.log("Invalid password for:", email);

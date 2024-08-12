@@ -13,9 +13,9 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     })
     .then(response => {
         if (response.ok) {
-            return response.json(); // Process the response if it's successful
+            return response.json(); 
         }
-        throw new Error('Login failed'); // Handle non-2xx responses
+        throw new Error('Login failed'); 
     })
 .then(data => {
   if (data.token) {
@@ -23,9 +23,10 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     localStorage.setItem('userDetails', JSON.stringify({
       restaurantName: data.restaurantName,
       staffName: data.staffName,
-      role: data.role
+      role: data.role,
+      restaurantId: data.restaurantId
     }));
-    window.location.href = '/admin/welcome.html'; // Redirect to the welcome page
+    window.location.href = '/admin/welcome.html'; // to welcome page
   } else {
     throw new Error('Login failed: ' + data.message);
   }

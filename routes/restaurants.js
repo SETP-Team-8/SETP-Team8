@@ -4,13 +4,12 @@ const multer = require('multer');
 const path = require('path');
 const pool = require('../config/database');
 
-// Configure multer for file storage
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, './public/uploads/');
     },
     filename: function(req, file, cb) {
-        // Create a unique filename with the original extension
+        
         cb(null, Date.now() + path.extname(file.originalname));
     }
 });
@@ -19,12 +18,12 @@ const upload = multer({ storage: storage });
 
 // Add a new restaurant
 router.post('/', upload.single('image'), async (req, res) => {
-  // Extract info from body
+  
   const { Name, Address, CuisineType, PhoneNumber } = req.body;
-  let imagePath = req.file ? req.file.path : 'defaultImagePath';  // Provide a default or handle absence
+  let imagePath = req.file ? req.file.path : 'defaultImagePath';  
 
   try {
-      // SQL query to insert into database
+      // sql insert into database
       const query = `INSERT INTO Restaurant (Name, Address, CuisineType, PhoneNumber, ImagePath) VALUES (?, ?, ?, ?, ?)`;
       const values = [Name, Address, CuisineType, PhoneNumber, imagePath];
       const [result] = await pool.query(query, values);
@@ -35,7 +34,7 @@ router.post('/', upload.single('image'), async (req, res) => {
   }
 });
 
-// Modify restaurant information
+
 // Modify restaurant information
 router.put('/:id', upload.single('image'), async (req, res) => {
   const { Name, Address, CuisineType, PhoneNumber, OpeningHours, Menu } = req.body;
@@ -44,7 +43,6 @@ router.put('/:id', upload.single('image'), async (req, res) => {
   const updates = [];
   const values = [];
 
-  // Check each field and prepare query dynamically
   if (Name) {
     updates.push('Name = ?');
     values.push(Name);
@@ -75,7 +73,7 @@ router.put('/:id', upload.single('image'), async (req, res) => {
   }
 
   if (updates.length > 0) {
-    values.push(req.params.id); // Add restaurant ID to the parameters list
+    values.push(req.params.id); 
     const query = `UPDATE Restaurant SET ${updates.join(', ')} WHERE RestaurantID = ?`;
 
     try {

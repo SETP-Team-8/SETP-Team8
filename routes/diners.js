@@ -42,24 +42,21 @@ router.post('/signup', [
 
 // POST: Diner login
 router.post('/login', async (req, res) => {
-  const { identifier, Password } = req.body; // 'identifier' can be either email or username
+  const { identifier, Password } = req.body; 
 
   try {
-      // Check both username and email fields for the identifier
       const query = `SELECT * FROM Diner WHERE Username = ? OR Email = ? LIMIT 1`;
       const [rows] = await pool.query(query, [identifier, identifier]);
 
-      // Log fetched data for debugging
       console.log("Fetched user:", rows[0]);
 
       if (rows.length > 0) {
           const user = rows[0];
 
-          // Check and log the password details
           console.log("Stored password:", user.Password);
           console.log("Provided password:", Password);
 
-          // Check if the password is defined and compare it
+          
           if (user.Password && bcrypt.compareSync(Password, user.Password)) {
               const token = jwt.sign({ dinerId: user.DinerID, name: user.FirstName }, process.env.TOKEN_SECRET, { expiresIn: '1h' });
               res.json({ message: 'Login successful', token });

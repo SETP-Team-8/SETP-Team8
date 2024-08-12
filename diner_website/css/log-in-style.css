@@ -9,7 +9,6 @@ html, body {
     overflow-x: hidden;
 }
 
-/* for nav bar */
 .navbar {
     display: flex;
     height: 80px;
@@ -45,9 +44,7 @@ html, body {
     border: #FF5733 1px solid;
 }
 
-/* for nav bar */
 
-/* for container login */
 .containerlogin {
     min-height: calc(100vh - 160px);
     background-color: #FF5733;
@@ -58,9 +55,7 @@ html, body {
     width: 100%;
 }
 
-/* for container login */
 
-/* for login */
 .login {
     width: 100%;
     max-width: 800px;
@@ -74,7 +69,7 @@ html, body {
     margin-bottom: 50px;
 }
 
-/* for welcome */
+
 .welcomelogin {
     display: flex;
     flex-direction: column;
@@ -93,9 +88,7 @@ html, body {
     margin: 20px 0;
 }
 
-/* for welcome */
 
-/* for login */
 .inputform {
     width: 100%;
     max-width: 400px;
@@ -145,9 +138,7 @@ html, body {
     margin-top: 10px;
 }
 
-/* for login */
 
-/* for footer */
 .footer {
     display: flex;
     height: 30px; 
@@ -164,9 +155,7 @@ html, body {
     font-size: 14px; 
     color: #FF5733;
 }
-/* for footer */
 
-/* responsive */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;

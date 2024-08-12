@@ -21,7 +21,7 @@ async function submitLoginForm() {
 
         const data = await response.json();
         localStorage.setItem('token', data.token);
-        window.location.href = 'index.html'; // Redirect to profile page
+        window.location.href = 'index.html'; 
     } catch (error) {
         errorMessage.style.display = 'block';
         errorMessage.textContent = '* ' + error.message;
