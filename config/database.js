@@ -1,8 +1,7 @@
 const mysql = require('mysql2');
 
-const dbConfig = process.env.JAWSDB_MARIA_URL ? {
-    uri: process.env.JAWSDB_MARIA_URL
-} : {
+
+const dbConfig = process.env.JAWSDB_MARIA_URL ? process.env.JAWSDB_MARIA_URL : {
     host: 'localhost',
     user: 'root',
     password: 'passwordisPassw0rd',
