@@ -40,7 +40,8 @@ function searchRestaurants() {
 }
 
 function fetchRestaurants() {
-    fetch('http://localhost:3000/api/restaurants/')
+    const baseUrl = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://setp-team8-8e10177b25fe.herokuapp.com';
+    fetch(`${baseUrl}/api/restaurants/`)
     .then(response => response.json())
     .then(restaurants => {
         const newAndHotContainer = document.getElementById('newAndHotRestaurants');
