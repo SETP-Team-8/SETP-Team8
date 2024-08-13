@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
     const userDetails = JSON.parse(localStorage.getItem('userDetails'));
+    const apiUrl = window.location.hostname.includes('localhost') ? 'http://localhost:3000' : 'https://setp-team8-8e10177b25fe.herokuapp.com';
+
     if (userDetails && userDetails.restaurantId) {
-        fetchReservationsByRestaurant(userDetails.restaurantId);
+        fetchReservationsByRestaurant(userDetails.restaurantId, apiUrl);
     } else {
         console.error('Restaurant ID not found in local storage');
     }
 });
 
-function fetchReservationsByRestaurant(restaurantId) {
-    fetch(`http://localhost:3000/api/reservations?restaurantId=${restaurantId}`)
+function fetchReservationsByRestaurant(restaurantId, apiUrl) {
+    fetch(`${apiUrl}/api/reservations?restaurantId=${restaurantId}`)
     .then(response => response.json())
     .then(data => {
         const tableBody = document.getElementById('reservation-table-body');
