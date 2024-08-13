@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
     const restaurantId = params.get('id'); 
 
-    fetch(`http://localhost:3000/api/restaurants/${restaurantId}`)
+    const apiUrl = window.location.hostname.includes('localhost') ?
+                   'http://localhost:3000' : 'https://setp-team8-8e10177b25fe.herokuapp.com';
+
+    fetch(`${apiUrl}/api/restaurants/${restaurantId}`)
     .then(response => response.json())
     .then(restaurant => {
         document.getElementById('restaurantName').textContent = restaurant.Name;

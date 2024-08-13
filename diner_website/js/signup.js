@@ -1,6 +1,9 @@
 document.getElementById('signupForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
+    const apiUrl = window.location.hostname.includes('localhost') ?
+    'http://localhost:3000' : 'https://setp-team8-8e10177b25fe.herokuapp.com';
+
     const userData = {
         Title: document.querySelector('select[name="gender"]').value,
         FirstName: document.querySelector('.firstname').value,
@@ -12,7 +15,7 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
         ConfirmPassword: document.querySelector('.confirmpassword').value
     };
 
-    fetch('http://localhost:3000/api/diners/signup', {
+    fetch(`${apiUrl}/api/diners/signup`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

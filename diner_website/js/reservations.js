@@ -7,10 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function fetchDinerInfo() {
     const token = localStorage.getItem('token');
+    const apiUrl = window.location.hostname.includes('localhost') ? 'http://localhost:3000' : 'https://setp-team8-8e10177b25fe.herokuapp.com';
     if (token) {
         const dinerId = parseJwt(token).dinerId; 
         if (dinerId) {
-            fetch(`http://localhost:3000/api/diners/${dinerId}`, {
+            fetch(`${apiUrl}/api/diners/${dinerId}`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`
